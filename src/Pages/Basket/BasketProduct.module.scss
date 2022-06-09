@@ -1,0 +1,103 @@
+.basket {
+    &__product {
+        position: relative;
+        display: flex;
+        width: 768px;
+        padding: 12px;
+        background: #FFFFFF;
+
+        &__info {
+            margin-left: 16px;
+        }
+
+        &__name {
+            display: flex;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #393939;
+
+            button {
+                position: absolute;
+                background: inherit;
+                border: none;
+                cursor: pointer;
+                top: 13px;
+                right: 13px;
+            }
+
+        }
+
+        &__size {
+            margin: 15px 0 6px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 16px;
+            color: #7C7C7C;
+        }
+
+        &__color {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 16px;
+            color: #7C7C7C;
+        }
+
+        &__price {
+            display: flex;
+            align-items: center;
+            margin: 6px 0 12px;
+
+            &New {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 22px;
+                color: #393939;
+            }
+
+            &Old {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                text-decoration-line: line-through;
+                color: #ADADAD;
+
+            }
+        }
+
+        &__btn {
+            display: flex;
+
+            div {
+                margin: 0 20px;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #393939;
+            }
+
+            button {
+                background: #F8F8F8;
+                border: 1px solid #EFEFEF;
+                border-radius: 6px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 32px;
+                height: 32px;
+            }
+
+            &__item {
+            }
+        }
+    }
+}

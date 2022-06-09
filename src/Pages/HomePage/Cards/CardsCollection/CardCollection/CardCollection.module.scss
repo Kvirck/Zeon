@@ -1,0 +1,61 @@
+.cardCollection {
+    max-width: 286px;
+
+    &__img {
+        min-width: 286px;
+        min-height: 330px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    p {
+        padding-bottom: 12px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    &__description {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #1D1D1B;
+    }
+
+    button {
+        font-family: 'Montserrat';
+        font-style: normal;
+        margin-right: 15px;
+        padding: 13.5px 0;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+        outline: none;
+        border: none;
+        background: inherit;
+    }
+
+    &__description:hover {
+        cursor: pointer;
+        background-color: #FFFFFF;
+        transition: 0.5s;
+        button {
+            color: #1D1D1B;
+            cursor: pointer;
+        }
+        svg path {
+            fill: #1D1D1B
+        }
+    }
+
+
+
+
+}

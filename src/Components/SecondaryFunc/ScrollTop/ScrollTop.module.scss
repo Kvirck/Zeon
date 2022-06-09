@@ -1,0 +1,33 @@
+.arrow {
+    margin-right: 2px;
+}
+
+.scrollTop {
+    position: fixed;
+    bottom: 90px;
+    right: 200px;
+    z-index: 1;
+    text-align: end;
+    cursor: pointer;
+}
+
+.message {
+    display: flex;
+    margin-top: 29px;
+}
+
+.messageIcon {
+    cursor: pointer;
+    margin: 8px 0 12px;
+}
+
+.socialNetwork {
+    &__item:not(:last-child) {
+        margin-right: 6px;
+    }
+}
+
+.xIcon {
+    margin: 10px 5px 0 22px;
+    cursor: pointer;
+}

@@ -1,0 +1,97 @@
+.modalProduct {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+        padding: 32px 24px;
+        background: #FFFFFF;
+
+        &__title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+
+            p {
+                font-style: normal;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 24px;
+                color: #393939;
+            }
+
+            svg {
+                cursor: pointer;
+            }
+        }
+        &__input {
+
+            input {
+                width: 392px;
+                padding: 13px;
+                margin-bottom: 12px;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                color: #D0D0D0;
+            }
+        }
+
+        &__text {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 16px;
+            color: #808080;
+            margin-bottom: 4px;
+
+        }
+
+        &__checkbox {
+            display: flex;
+            margin: 18px 0 35px;
+
+            p {
+                margin-left: 11px;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 18px;
+                color: #393939;
+                span{
+                    cursor: pointer;
+                    color: blue;
+                }
+            }
+        }
+
+        &__btn {
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), #1D1D1B;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            outline: none;
+            border: none;
+            padding: 14px;
+            width: 100%
+        }
+    }
+
+}
+
+.active {
+    display: flex;
+}

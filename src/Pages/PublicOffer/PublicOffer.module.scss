@@ -1,0 +1,24 @@
+.publicOffer {
+    &__title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        color: #393939;
+        margin: 11px 0 34px;
+    }
+
+    &__description{
+        padding: 16px;
+        background: #FFFFFF;
+        margin-bottom: 70px;
+    }
+    &__text {
+        margin-bottom: 15px;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 165%;
+        color: #5B5B5B;
+    }
+}

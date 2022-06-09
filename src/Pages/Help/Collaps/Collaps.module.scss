@@ -1,0 +1,51 @@
+    .collaps {
+        padding: 16px;
+        background: #FFFFFF;
+        margin-bottom: 12px;
+        &__text {
+            display: flex;
+            justify-content: space-between;
+            width: 644px;
+        }
+
+        &__title {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            color: #393939;
+        }
+
+        button {
+            border: none;
+            background: inherit;
+            cursor: pointer;
+        }
+
+        &__description {
+            transform: scale(0);
+            margin-top: 12px;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 160%;
+            color: #354455;
+            transition: 2s;
+        }
+    }
+
+    .active {
+        transform: scale(1);
+    }
+
+    .noRotate {
+        svg {
+            transition: 1s;
+        }
+    }
+
+    .rotate {
+        svg {
+            transition: 1.5s;
+            transform: rotate(540deg);
+        }
+    }

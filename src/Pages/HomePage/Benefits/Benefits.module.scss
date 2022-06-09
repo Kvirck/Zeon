@@ -1,0 +1,38 @@
+.benefits {
+    display: flex;
+    margin-bottom: 64px;
+}
+
+.benefit {
+    background: #FFFFFF;
+    width: 286px;
+    height: 248px;
+    &__content {
+        text-align: center;
+
+        img {
+            margin: 32px 0 35px;
+        }
+    }
+
+    &__title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #393939;
+    }
+
+    &__description {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 175%;
+        letter-spacing: 0.04em;
+        color: #979797;
+
+    }
+}
+
+.benefit:not(:last-child) {
+    margin-right: 8px;
+}

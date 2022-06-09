@@ -1,0 +1,23 @@
+.btn {
+    align-items: center;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: 16px 0 44px;
+    text-align: center;
+    background: #1D1D1B;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #FFFFFF;
+    padding: 8px 38px;
+    border: none;
+    cursor: pointer;
+    span {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+

@@ -1,0 +1,8 @@
+.cardsCollection{
+    display: flex;
+    flex-wrap: wrap;
+    &__item{
+        margin: 3px;
+    }
+}
+

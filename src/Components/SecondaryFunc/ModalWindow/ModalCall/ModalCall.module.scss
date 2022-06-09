@@ -1,0 +1,111 @@
+.modal {
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.5s;
+    &__iconX {
+        display: block;
+        margin-left: auto;
+        cursor: pointer;
+    }
+
+    &__content {
+        padding: 32px 38px;
+        background: #FFFFFF;
+    }
+
+    &__text {
+        text-align: left;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 125%;
+        color: #393939;
+    }
+
+    &__description {
+        margin: 6px 0 12px;
+        max-width: 360px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        color: #393939;
+    }
+
+    &__user {
+        input {
+            background-image: url(./../../../../../public/img/userIcon.svg);
+            background-repeat: no-repeat;
+            background-position: 12px;
+            min-width: 310px;
+            height: 42px;
+            border-radius: 3px;
+            border: 1px solid rgba(31, 31, 31, 0.08);
+            outline: none;
+            padding-left: 40px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #BEBEBE;
+        }
+    }
+    &__call{
+        input {
+            background-image: url(./../../../../../public/img/callIcon.svg);
+            background-repeat: no-repeat;
+            background-position: 12px;
+            min-width: 310px;
+            height: 42px;
+            border-radius: 3px;
+            border: 1px solid rgba(31, 31, 31, 0.08);
+            outline: none;
+            padding-left: 42px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #BEBEBE;
+        }
+    }
+
+    input {
+        margin-bottom: 11px;
+    }
+    input::placeholder {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #BEBEBE;
+    }
+    button {
+        padding: 14px 120px;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), #1D1D1B;
+        border: none;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+    }
+
+}
+.modal.active{
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+}
+.modal__btn.active{
+    background: #1D1D1B;
+}
