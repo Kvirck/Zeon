@@ -9,7 +9,7 @@ class collectionsPage {
 
     collections = [] // свойства 
     links = []
-    limit = 4
+    limit = 8
     page = 1
     getCollections(url) {
             axios.get(`http://localhost/collections?page=${this.page}&limit=${this.limit}`)
@@ -19,6 +19,7 @@ class collectionsPage {
                     this.page++
                 })
     }
+    
 
     get get_Collections() {
         return toJS(this.collections)
