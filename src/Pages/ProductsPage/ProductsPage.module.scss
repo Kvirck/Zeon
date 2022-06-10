@@ -4,6 +4,19 @@
     margin: 10px 0;
 
     &__img {
+        max-width: 640px;
+
+        img {
+            cursor: pointer;
+        }
+
+        div:not(:last-child) {
+            margin: 0 8px 8px 0;
+        }
+
+    }
+
+    &__imgFour {
         display: flex;
         flex-wrap: wrap;
         max-width: 640px;
@@ -13,8 +26,44 @@
             cursor: pointer;
         }
 
+        .active1 {
+            img {
+                position: fixed;
+                width: 500px;
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
         div:not(:last-child) {
             margin: 0 8px 8px 0;
+        }
+    }
+
+    &__imgEight {
+        display: flex;
+        flex-wrap: wrap;
+
+        img {
+            width: 150px;
+            cursor: pointer;
+        }
+
+        div:not(:last-child) {
+            margin: 0 8px 8px 0;
+        }
+
+        .active {
+            img {
+                position: fixed;
+                width: 500px;
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+            }
         }
     }
 
@@ -179,4 +228,5 @@
             }
         }
     }
+
 }
