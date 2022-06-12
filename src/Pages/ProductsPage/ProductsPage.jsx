@@ -9,8 +9,9 @@ import ModallPhoto from "./ModallPhoto";
 const ProductsPage = () => {
     const data = producst.toJS_producst
     const [open, setOpen] = useState(true)
-   return (
+    return (
         <div className="container">
+
             <ModallPhoto data={data} open={open} setOpen={setOpen} />
             {data.map(item => {
                 return (
@@ -18,11 +19,10 @@ const ProductsPage = () => {
                         <div className={style.productsPage__img}>
                             <div className={style.productsPage__imgFour} >
                                 {item.colors[0].images.map((img, i) => {
-                                    console.log(`img ${i}`, img);
                                     if (i < 4) {
                                         return (
                                             <div key={img[0] + i}>
-                                                < img onClick={()=>setOpen(!open)}  width='500' src={img} alt="img" />
+                                                < img onClick={() => setOpen(!open)} width='500' src={img} alt="img" />
                                             </div>
                                         )
                                     }
@@ -33,7 +33,7 @@ const ProductsPage = () => {
                                     if (i >= 4) {
                                         return (
                                             <div key={img[0] + i}>
-                                                <img onClick={()=>setOpen(!open)}  src={img} alt="img" />
+                                                <img onClick={() => setOpen(!open)} src={img} alt="img" />
                                             </div>
                                         )
                                     }

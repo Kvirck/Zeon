@@ -16,6 +16,7 @@ import cardsBesteller from './DataBase/cardsBesteller';
 import novelties from './DataBase/novelties';
 import ProductsPage from './Pages/ProductsPage/ProductsPage';
 import producst from './DataBase/producst';
+import Section from './Pages/SectionPage/SectionPage';
 
 function App() {
   useEffect(() => {
@@ -36,7 +37,8 @@ function App() {
         <Route path='/Basket' element={<Basket />} />
         <Route path='/Help' element={<Help />} />
         <Route path='/Collections' element={<Collections />} />      
-        <Route path='/ProductsPage/' element={<ProductsPage />} />        
+        <Route path='/ProductsPage' element={<ProductsPage />} />   
+        <Route path='/Section' element={<Section />}/>     
       </Routes>
       <Footer/>
     </div>
