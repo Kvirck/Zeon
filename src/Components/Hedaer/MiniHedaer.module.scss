@@ -1,0 +1,12 @@
+.header {
+  background-color: #fff;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .searchBox{
+    position: relative;
+  }
+}

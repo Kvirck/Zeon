@@ -35,7 +35,6 @@ const Header = (props) => {
             </div>
             <form className={style.search}>
               <input type="text" placeholder="Поиск" />
-
             </form>
             <div className={style.bottom__favorites}>
               <img src="/img/heart-icon.svg" alt="heart-icon" />
