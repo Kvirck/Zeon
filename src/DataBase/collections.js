@@ -12,7 +12,7 @@ class collections {
     page = 1
     stop = true
     getCollections() {
-          axios.get(`http://localhost/collections?page=${this.page}&limit=${this.limit}`)
+          axios.get(`http://localhost:80/collections?page=${this.page}&limit=${this.limit}`)
             .then(res => {
                 if (res.data.data.length < this.limit) this.stop = false
                 this.collections = [...this.collections, ...res.data.data]

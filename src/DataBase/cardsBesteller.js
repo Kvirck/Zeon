@@ -12,7 +12,7 @@ class cardsBesteller {
     page = 1
     stop = true
     getCardBesteller() {
-          axios.get(`http://localhost/products?limit=${this.limit}&page=${this.page}&reverse=asd`)
+          axios.get(`http://localhost:80/products?limit=${this.limit}&page=${this.page}&reverse=asd`)
             .then(res => {
                 if (res.data.data.length < this.limit) this.stop = false
                 this.cardsBesteller = [...this.cardsBesteller, ...res.data.data]

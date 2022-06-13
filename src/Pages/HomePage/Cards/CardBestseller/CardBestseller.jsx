@@ -3,7 +3,7 @@ import style from "./CardBestseller.module.scss";
 const CardBestseller = ({ data = [] }) => {
     return <div className={style.card}>
         <div style={style.card__img}>
-            <img src={data.images[0]} alt="img" />
+            <img src={`http://localhost/${data.images[0]}`} alt="img" />
             { data.colors[0].discount ? <div className={style.card__img__sale}>
                 <span>{data.colors[0].discount + '%'}</span>
             </div> : null}

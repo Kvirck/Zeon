@@ -39,6 +39,9 @@
     }
 
     &__name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         margin: 6px 0;
         font-style: normal;
         font-weight: 400;

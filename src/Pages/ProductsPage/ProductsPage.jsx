@@ -11,7 +11,7 @@ const ProductsPage = () => {
     console.log(id);
     const [post, setPost] = useState(null)
     useEffect(() => {
-        fetch(`http://localhost/products/${id}`)
+        fetch(`http://localhost:80/products/${id}`)
             .then(res => res.json())
             .then(data => setPost(data.data))
     }, [id])

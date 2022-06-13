@@ -7,7 +7,7 @@ class producst {
     }
     producst = []
     getProducst (){
-        axios.get('http://localhost/products?limit=1')
+        axios.get('http://localhost:80/products?limit=1')
         .then(res=>{
             this.producst = [ ...this.producst, ...res.data.data]
         })

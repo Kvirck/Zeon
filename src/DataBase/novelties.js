@@ -12,7 +12,7 @@ class novelties {
     page  = 1
     stop = true
     getNovelties (){
-        axios.get(`http://localhost/products?limit=${this.limit}&page=${this.page}`)
+        axios.get(`http://localhost:80/products?limit=${this.limit}&page=${this.page}`)
         .then(res=>{
             if (res.data.data.length < this.limit) this.stop = false
             this.novelties = [ ...this.novelties, ...res.data.data]

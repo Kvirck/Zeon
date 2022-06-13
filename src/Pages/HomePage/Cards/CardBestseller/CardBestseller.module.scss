@@ -19,6 +19,7 @@
             position: absolute;
             left: 0;
             top: 0;
+
             span {
                 font-weight: 500;
                 font-size: 12px;
@@ -36,9 +37,13 @@
 
     &__description {
         padding-left: 6px;
+
     }
 
     &__name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         margin: 6px 0;
         font-style: normal;
         font-weight: 400;
@@ -57,7 +62,7 @@
         text-align: justify;
         color: #393939;
 
- 
+
     }
 
     &__priceOld {

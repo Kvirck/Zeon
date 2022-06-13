@@ -2,7 +2,7 @@ import style from "./CardCollection.module.scss";
 const CardCollection = ({ data }) => {
 
     return <div className={style.cardCollection}>
-        <div style={{ backgroundImage: `url(${data.image})` }} className={style.cardCollection__img}>
+        <div style={{ backgroundImage: `url(http://localhost/${data.image})` }} className={style.cardCollection__img}>
             <p>{data.name}</p>
         </div>
         <div className={style.cardCollection__description}>
