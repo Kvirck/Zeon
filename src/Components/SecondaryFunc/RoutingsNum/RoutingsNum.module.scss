@@ -1,6 +1,6 @@
 .routingsNum {
     display: flex;
-
+    
     &__btn {
         padding: 13px 17px;
         font-family: 'Inter';
@@ -30,4 +30,7 @@
             }
         }
     }
+}
+.routingsNum__btn:first-child {
+    
 }

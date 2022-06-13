@@ -2,6 +2,7 @@
         padding: 16px;
         background: #FFFFFF;
         margin-bottom: 12px;
+
         &__text {
             display: flex;
             justify-content: space-between;
@@ -23,7 +24,7 @@
         }
 
         &__description {
-            transform: scale(0);
+            display: none;
             margin-top: 12px;
             font-weight: 300;
             font-size: 14px;
@@ -34,7 +35,7 @@
     }
 
     .active {
-        transform: scale(1);
+        display: block;
     }
 
     .noRotate {

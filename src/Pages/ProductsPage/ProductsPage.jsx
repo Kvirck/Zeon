@@ -15,45 +15,37 @@ const ProductsPage = () => {
             .then(res => res.json())
             .then(data => setPost(data.data))
     }, [id])
-    const data = post
-    const [open, setOpen] = useState(true)
     return (
         <div className="container">
             {id}
-            <ModallPhoto data={post} open={open} setOpen={setOpen} />
-
-            {data && (
+            {post && (
                 <div className={style.productsPage}>
                     <div className={style.productsPage__img}>
                         <div className={style.productsPage__imgFour} >
-                            {data.colors[0].images.map((img, i) => {
-                                if (i < 4) {
-                                    return (
-                                        <div key={img[0] + i}>
-                                            < img onClick={() => setOpen(!open)} width='500' src={img} alt="img" />
-                                        </div>
-                                    )
-                                }
-                            })}
+                            {post.colors[0].images
+                            .filter((img, index) => index < 4)
+                            .map((img, i) => (
+                                <div key={img[0] + i}>
+                                    <ModallPhoto img={img}/>
+                                </div>
+                            ))}
                         </div>
                         <div className={style.productsPage__imgEight}>
-                            {data.colors[0].images.map((img, i) => {
-                                if (i >= 4) {
-                                    return (
-                                        <div key={img[0] + i}>
-                                            <img onClick={() => setOpen(!open)} src={img} alt="img" />
-                                        </div>
-                                    )
-                                }
-                            })}
+                            {post.colors[0].images
+                            .filter((img, index) => index >= 4)
+                            .map((img, i) => (
+                                <div key={img[0] + i}>
+                                    <ModallPhoto img={img}/>
+                                </div>
+                            ))}
                         </div>
                     </div>
                     <div className={style.productsPage__text}>
-                        <p className={style.productsPage__title}>{data.colors[0].name}</p>
-                        <p className={style.productsPage__identification}>Артикул: <span>{data.colors[0].articul}</span></p>
+                        <p className={style.productsPage__title}>{post.colors[0].name}</p>
+                        <p className={style.productsPage__identification}>Артикул: <span>{post.colors[0].articul}</span></p>
                         <div className={style.productsPage__color}>
                             <p >Цвет: </p>
-                            {data.colors_name.map((color, i) =>
+                            {post.colors_name.map((color, i) =>
                                 <div key={color[0] + i}>
                                     <div style={{ backgroundColor: color }}
                                         className={style.productsPage__color__colorBrown}>
@@ -63,20 +55,20 @@ const ProductsPage = () => {
                         </div>
                         <div className={style.productsPage__price}>
                             <p className={style.productsPage__priceNew}>
-                                {data.colors[0].current_price} {data.colors[0].current_price ? ' р ' : ''}
-                                <span className={data.colors[0].current_price ? style.productsPage__priceOld : style.productsPage__priceNew}>{data.colors[0].price} р</span>
+                                {post.colors[0].current_price} {post.colors[0].current_price ? ' р ' : ''}
+                                <span className={post.colors[0].current_price ? style.productsPage__priceOld : style.productsPage__priceNew}>{post.colors[0].price} р</span>
                             </p>
                         </div>
                         <p className={style.productsPage__info}>О товаре:</p>
-                        <p className={style.productsPage__description}>{data.colors[0].description}</p>
+                        <p className={style.productsPage__description}>{post.colors[0].description}</p>
                         <div className={style.productsPage__characteristics}>
                             <div className={style.productsPage__characteristicsLeft}>
-                                <p className={style.productsPage__characteristics__data}>Размерный ряд:<span>{data.colors[0].size}</span></p>
+                                <p className={style.productsPage__characteristics__data}>Размерный ряд:<span>{post.colors[0].size}</span></p>
                                 <p className={style.productsPage__characteristics__data}>Количество в линейке :<span>5</span></p>
                             </div>
                             <div className={style.productsPage__characteristicsRight}>
-                                <p className={style.productsPage__characteristics__data}>Состав ткани:<span>{data.colors[0].material} </span></p>
-                                <p className={style.productsPage__characteristics__data}>Материал:<span>{data.colors[0].property} </span></p>
+                                <p className={style.productsPage__characteristics__data}>Состав ткани:<span>{post.colors[0].material} </span></p>
+                                <p className={style.productsPage__characteristics__data}>Материал:<span>{post.colors[0].property} </span></p>
                             </div>
                         </div>
                         <div className={style.productsPage__btn}>
@@ -95,6 +87,7 @@ const ProductsPage = () => {
                     </div>
                 </div>
             )}
+            <p>Похожие товары</p>
         </div >
     )
 }

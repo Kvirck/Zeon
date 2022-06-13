@@ -1,5 +1,5 @@
 import axios from "axios"
-import {  makeAutoObservable, toJS } from 'mobx';
+import { makeAutoObservable, toJS } from 'mobx';
 
 class collectionsPage {
 
@@ -11,15 +11,22 @@ class collectionsPage {
     links = []
     limit = 8
     page = 1
+    url = `http://localhost/collections?page=${this.page}&limit=${this.limit}`
     getCollections(url) {
-            axios.get(`http://localhost/collections?page=${this.page}&limit=${this.limit}`)
+        url ? axios.get(`${url}`)
+            .then(res => {
+                this.collections = res.data.data
+                this.links = res.data.meta
+                this.page++
+            }) :
+            axios.get(`${this.url}`)
                 .then(res => {
-                    this.collections = [...this.collections, ...res.data.data]
+                    this.collections = res.data.data
                     this.links = res.data.meta
                     this.page++
                 })
     }
-    
+
 
     get get_Collections() {
         return toJS(this.collections)
