@@ -8,12 +8,13 @@ class collectionsPage {
     }
     collections = [] // свойства 
     links = []
+    products = []
     limit = 8
     page = 1
     currentPage = 1
-    url = `http://localhost/collections?limit=${this.limit}&page=${this.page}`
+    url = `http://localhost/collections?products=true&limit=${this.limit}&page=${this.page}`
     getCollections(url) {
-        url ? axios.get(`${url}`)
+        url ? axios.get(url)
             .then(res => {
                 this.collections = res.data.data
                 this.links = res.data.meta.links
@@ -29,7 +30,24 @@ class collectionsPage {
 
     }
 
-
+    collections_links = []
+    collections_products = []
+    collections_currentPage = 1
+    collections_url = ''
+    async getCollectionsPage(url) {
+        const response = await axios.get(url)
+        this.collections_links = response.data.meta.links
+        this.collections_currentPage = response.data.meta.page
+        this.collections_products = response.data.data
+        this.collections_url = url
+    }
+    async getCollectionsPageNew(url) {
+        const response = await axios.get(url)
+        this.collections_links = response.data.meta.links
+        this.collections_currentPage = response.data.meta.page
+        this.collections_products = response.data.data
+        this.collections_url = url
+    }
     get get_Collections() {
         return toJS(this.collections)
     }
@@ -40,5 +58,16 @@ class collectionsPage {
         return toJS(this.currentPage)
     }
 
+    get toJS_getCollPage_Links() {
+        return toJS(this.collections_links)
+    }
+
+    get toJS_getCollPage_products() {
+        return toJS(this.collections_products)
+
+    }
+    get toJS_getCollPage_currentPage() {
+        return toJS(this.collections_currentPage)
+    }
 }
 export default new collectionsPage();

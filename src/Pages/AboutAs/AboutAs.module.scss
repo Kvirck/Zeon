@@ -8,11 +8,6 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
-    img:hover{
-        transition: 1.5s;
-        transform: scale(1.3);
-        cursor: pointer;
-    }
     img {
         max-width: 327px;
 

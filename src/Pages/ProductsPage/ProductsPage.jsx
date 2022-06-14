@@ -8,7 +8,6 @@ import { useEffect } from 'react';
 
 const ProductsPage = () => {
     const { id } = useParams()
-    console.log(id);
     const [post, setPost] = useState(null)
     useEffect(() => {
         fetch(`http://localhost:80/products/${id}`)

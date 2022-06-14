@@ -1,15 +1,20 @@
 import style from "./MiniHedaer.module.scss";
 import { Link, } from 'react-router-dom';
-import './styleSeatch.css'
+import './styleHeaderMini.css'
+import Menu from "./Menu";
+import { useState } from 'react';
 
 const MiniHedaer = () => {
+  const [menuActive, setMenuActive]= useState(false)
   return (
     <div className={style.header}>
       <div className="container">
         <div className={style.header__content}>
-          <div className={style.burger}>
-            <span></span>
-            <div className={style.header__menu}>
+          <div className="navbar">
+            <div className='burger-btn' onClick={()=>setMenuActive(!menuActive)}>
+              <span></span>
+              <Menu active={menuActive} setActive={setMenuActive} />
+              {/* <div className={style.header__menu}>
               <ul className={style.header__list}>
                 <Link to="/AboutAs">
                   <li className={style.header__link}>О нас</li>
@@ -35,6 +40,7 @@ const MiniHedaer = () => {
                   <span>Корзина</span>
                 </div>
               </Link>
+            </div> */}
             </div>
           </div>
           <div className={style.logo}>

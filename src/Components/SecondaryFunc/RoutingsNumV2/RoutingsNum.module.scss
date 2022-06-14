@@ -1,0 +1,67 @@
+.routingsNum {
+    display: flex;
+
+    &__btn {
+        padding: 13px 17px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #979797;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        background: #FFFFFF;
+        border: none;
+    }
+
+    .active {
+        color: #FFFFFF;
+        background: #1D1D1B;
+    }
+
+    &__btn:not(:last-child) {
+        margin-right: 12px;
+    }
+
+    &__btn:hover {
+        color: #FFFFFF;
+        background: #1D1D1B;
+        cursor: pointer;
+
+        svg {
+            path {
+                fill: #FFFFFF
+            }
+        }
+    }
+}
+
+.routingsNum__btn:first-child {
+    font-size: 0;
+    background-image: url('./../../../../public/img/ArrowLeftPlagin.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.routingsNum__btn:first-child:hover {
+    font-size: 0;
+    background-image: url('./../../../../public/img/ArrowLeftPlaginWhite.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.routingsNum__btn:last-child {
+    font-size: 0;
+    background-image: url('./../../../../public/img/ArrowRyghtPlagin.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.routingsNum__btn:last-child:hover {
+    font-size: 0;
+    background-image: url('./../../../../public/img/ArrowRyghtPlaginWhite.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}

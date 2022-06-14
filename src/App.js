@@ -16,7 +16,7 @@ import cardsBesteller from './DataBase/cardsBesteller';
 import novelties from './DataBase/novelties';
 import ProductsPage from './Pages/ProductsPage/ProductsPage';
 import Section from './Pages/SectionPage/SectionPage';
-import MiniHedaer from './Components/Hedaer/MiniHedaer';
+import CollectionsPage from './Pages/CollectionsPage/CollectionsPage';
 
 function App() {
   useEffect(() => {
@@ -29,7 +29,7 @@ function App() {
   return (
     <div>
       <Header/>
-      <MiniHedaer/>
+      {/* <MiniHedaer/> */}
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/NewsPage' element={<NewsPage />} />
@@ -39,6 +39,7 @@ function App() {
         <Route path='/Collections' element={<Collections />} />      
         <Route path='/ProductsPage/:id' element={<ProductsPage />} />   
         <Route path='/Section' element={<Section />}/>     
+        <Route path='/Collections/:id' element={<CollectionsPage />}/>     
       </Routes>
       <Footer/>
     </div>
