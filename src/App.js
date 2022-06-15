@@ -16,6 +16,7 @@ import cardsBesteller from './DataBase/cardsBesteller';
 import novelties from './DataBase/novelties';
 import ProductsPage from './Pages/ProductsPage/ProductsPage';
 import Section from './Pages/SectionPage/SectionPage';
+import MiniHedaer from './Components/Hedaer/MiniHedaer';
 import CollectionsPage from './Pages/CollectionsPage/CollectionsPage';
 
 function App() {
@@ -24,24 +25,24 @@ function App() {
     collectionsPage.getCollections()
     cardsBesteller.getCardBesteller()
     novelties.getNovelties()
-}, [])
+  }, [])
 
   return (
     <div>
-      <Header/>
-      {/* <MiniHedaer/> */}
+      <Header />
+      <MiniHedaer />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/NewsPage' element={<NewsPage />} />
         <Route path='/AboutAs' element={<AboutAs />} />
         <Route path='/Basket' element={<Basket />} />
         <Route path='/Help' element={<Help />} />
-        <Route path='/Collections' element={<Collections />} />      
-        <Route path='/ProductsPage/:id' element={<ProductsPage />} />   
-        <Route path='/Section' element={<Section />}/>     
-        <Route path='/Collections/:id' element={<CollectionsPage />}/>     
+        <Route path='/Collections' element={<Collections />} />
+        <Route path='/ProductsPage/:id' element={<ProductsPage />} />
+        <Route path='/Section' element={<Section />} />
+        <Route path='/Collections/:id' element={<CollectionsPage />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

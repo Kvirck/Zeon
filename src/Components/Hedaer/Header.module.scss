@@ -37,15 +37,23 @@ ul {}
 
   &__phone {
     display: flex;
-  }
 
-  .navbarPhone {
-    margin-right: 6px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 21px;
-    color: #979797;
+    a {
+      text-decoration: none;
+      color: #393939;
+
+    }
+
+    .navbarPhone {
+      margin-right: 6px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 21px;
+      color: #979797;
+
+
+    }
 
     .num {
       font-style: normal;
@@ -54,8 +62,11 @@ ul {}
       line-height: 21px;
       text-align: right;
       color: #393939;
+      text-decoration: none;
     }
   }
+
+
 
   .logo {
     width: 162px;
@@ -67,9 +78,11 @@ ul {}
     align-items: center;
     padding: 9px 0;
     justify-content: space-between;
+
     .search {
       display: flex;
       width: 662px;
+
       input {
         background-image: url(../../../public/img/searchIcon.svg);
         background-repeat: no-repeat;
@@ -91,6 +104,7 @@ ul {}
       }
 
     }
+
     @media (max-width:1168) {
       input {
         max-width: 50px;

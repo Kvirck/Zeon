@@ -1,4 +1,5 @@
 import style from "./AboutAs.module.scss"
+
 const AboutAs = () => {
     return (
         <div className={style.aboutAs} >

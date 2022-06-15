@@ -21,7 +21,7 @@ const Header = (props) => {
             </li>
             <div className={style.navbar__phone}>
               <span className={style.navbarPhone}>Тел:</span>
-              <span className={style.navbarPhone__num}>+996 000 00 00 00</span>
+              <a  href="tel:+996 000 00 00 00" className={style.navbarPhone__num}>+996 000 00 00 00</a>
             </div>
           </div>
         </div>
