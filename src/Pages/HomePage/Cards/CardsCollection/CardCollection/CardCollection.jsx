@@ -1,11 +1,12 @@
 import style from "./CardCollection.module.scss";
 import { Link } from 'react-router-dom';
+import MoveUp from './../../../../../Components/SecondaryFunc/ScrollTop/MoveUp';
 const CardCollection = ({ data ,id}) => {
     return <div className={style.cardCollection}>
         <div style={{ backgroundImage: `url(http://localhost/${data.image})` }} className={style.cardCollection__img}>
             <p>{data.name}</p>
         </div>
-        <Link to={`/Collections/${id}`}>
+        <Link onClick={()=>MoveUp()} to={`/Collections/${id}`}>
             <div className={style.cardCollection__description}>
                 <button>
                     Смотреть все

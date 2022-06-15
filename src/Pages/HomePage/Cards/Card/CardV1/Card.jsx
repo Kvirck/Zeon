@@ -1,13 +1,11 @@
 import style from "./Card.module.scss"
 
 const Card = ({ data }) => {
-
-    console.log("length", data);
     return (
         <>
             <div className={style.card}>
                 <div className={style.card__img}>
-                    <img src={`http://localhost${data.images[0]}`}/>
+                    <img src={`http://localhost${data.images[0]}`} alt="img"/>
                     {data.colors[0].discount ? <div className={style.card__img__sale}>
                         <span>{data.colors[0].discount + '%'}</span>
                     </div> : null}

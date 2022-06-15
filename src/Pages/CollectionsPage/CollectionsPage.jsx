@@ -21,7 +21,6 @@ const CollectionsPage = () => {
         load()
 
     }, [id])
-
     return (
         < div className="container" >
             <div className={style.collectionsPage}>

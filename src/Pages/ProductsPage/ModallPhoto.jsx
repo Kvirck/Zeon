@@ -4,7 +4,6 @@ import style from './ModallPhoto.module.scss'
 const ModallPhoto = ({ img }) => {
 
     const [open, setOpen] = useState(false)
-    console.log(`img`,img);
     return (
         <>
             <img onClick={() => setOpen(!open)} width='500' src={`http://localhost${img}`} alt="img" />

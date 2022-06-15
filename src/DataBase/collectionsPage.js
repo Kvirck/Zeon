@@ -48,6 +48,19 @@ class collectionsPage {
         this.collections_products = response.data.data
         this.collections_url = url
     }
+    productsSimilar = []
+
+    productsRandom = (min, max) => {
+        return Math.floor(Math.random() * (max - min + 1)) + min
+    }
+    async getProductsSimilar(setLoad, makeid) {
+        await axios.get(`http://localhost/products?limit=5&page=${this.productsRandom(0,50)}`)
+            .then(res => {
+                this.productsSimilar = res.data
+                setLoad(false)
+            })
+
+    }
     get get_Collections() {
         return toJS(this.collections)
     }
@@ -68,6 +81,9 @@ class collectionsPage {
     }
     get toJS_getCollPage_currentPage() {
         return toJS(this.collections_currentPage)
+    }
+    get toJS_getProductsSimilar() {
+        return toJS(this.productsSimilar)
     }
 }
 export default new collectionsPage();

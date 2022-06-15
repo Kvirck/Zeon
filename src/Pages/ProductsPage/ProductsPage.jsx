@@ -2,41 +2,44 @@ import style from "./ProductsPage.module.scss"
 import 'react-medium-image-zoom/dist/styles.css'
 import { useState } from 'react';
 import ModallPhoto from "./ModallPhoto";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect } from 'react';
-
+import Card from "../HomePage/Cards/Card/CardV1/Card";
+import collectionsPage from "../../DataBase/collectionsPage";
+import MoveUp from './../../Components/SecondaryFunc/ScrollTop/MoveUp';
 
 const ProductsPage = () => {
     const { id } = useParams()
     const [post, setPost] = useState(null)
+    const [load, setLoad] = useState(true)
     useEffect(() => {
+        collectionsPage.getProductsSimilar(setLoad)
         fetch(`http://localhost:80/products/${id}`)
             .then(res => res.json())
             .then(data => setPost(data.data))
     }, [id])
     return (
         <div className="container">
-            {id}
             {post && (
                 <div className={style.productsPage}>
                     <div className={style.productsPage__img}>
                         <div className={style.productsPage__imgFour} >
                             {post.colors[0].images
-                            .filter((img, index) => index < 4)
-                            .map((img, i) => (
-                                <div key={img[0] + i}>
-                                    <ModallPhoto img={img}/>
-                                </div>
-                            ))}
+                                .filter((img, index) => index < 4)
+                                .map((img, i) => (
+                                    <div key={img[0] + i}>
+                                        <ModallPhoto img={img} />
+                                    </div>
+                                ))}
                         </div>
                         <div className={style.productsPage__imgEight}>
                             {post.colors[0].images
-                            .filter((img, index) => index >= 4)
-                            .map((img, i) => (
-                                <div key={img[0] + i}>
-                                    <ModallPhoto img={img}/>
-                                </div>
-                            ))}
+                                .filter((img, index) => index >= 4)
+                                .map((img, i) => (
+                                    <div key={img[0] + i}>
+                                        <ModallPhoto img={img} />
+                                    </div>
+                                ))}
                         </div>
                     </div>
                     <div className={style.productsPage__text}>
@@ -86,7 +89,18 @@ const ProductsPage = () => {
                     </div>
                 </div>
             )}
-            <p>Похожие товары</p>
+            <div className={style.similarProducts}>
+                <p className={style.similarProducts__title}>Похожие товары</p>
+                <div className={style.similarProduct} >
+                    {!load ? collectionsPage.toJS_getProductsSimilar.data.map(item =>
+                        <div className={style.similarProduct__item} key={item.id}>
+                            <Link onClick={()=>MoveUp()} to={`/ProductsPage/${item.colors[0].id}`}>
+                                <Card data={item} />
+                            </Link>
+                        </div>
+                    ) : null}
+                </div>
+            </div>
         </div >
     )
 }

@@ -29,7 +29,7 @@ const HomePage = () => {
 
 
                     <h2>Коллекция</h2>
-                    <CardsCollection data={collections.get_Collections} />
+                    <CardsCollection  data={collections.get_Collections} />
                     {collections.get_Stop ? <Buttun onClick={() => collections.getCollections()} /> : ''}
                 </div>
                 <ScrollTop />
