@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect} from 'react';
 
 import './App.css';
 import HomePage from './Pages/HomePage/HomePage';
@@ -18,6 +18,8 @@ import ProductsPage from './Pages/ProductsPage/ProductsPage';
 import Section from './Pages/SectionPage/SectionPage';
 import MiniHedaer from './Components/Hedaer/MiniHedaer';
 import CollectionsPage from './Pages/CollectionsPage/CollectionsPage';
+import Favorites from './Pages/Favorites/Favorites';
+
 
 function App() {
   useEffect(() => {
@@ -41,6 +43,7 @@ function App() {
         <Route path='/ProductsPage/:id' element={<ProductsPage />} />
         <Route path='/Section' element={<Section />} />
         <Route path='/Collections/:id' element={<CollectionsPage />} />
+        <Route path='/Favorites' element={<Favorites />} />
       </Routes>
       <Footer />
     </div>

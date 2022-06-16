@@ -1,10 +1,12 @@
+import FavoritesIcon from "../../../../Components/SecondaryFunc/FavoritesIcon/FavoritesIcon";
 import style from "./Novelties.module.scss";
 
-const Novelties = ({ data = [] }) => {
-    return <div className={style.card}>
+const Novelties = ({ data = [], render, setRender }) => {
+    return <div className={style.card} >
         <div style={style.card__img}>
             <img src={`http://localhost/${data.images[0]}`} alt="img" />
-            { data.colors[0].discount ? <div className={style.card__img__sale}>
+            <FavoritesIcon render={render} setRender={setRender} data={data.id} />
+            {data.colors[0].discount ? <div className={style.card__img__sale}>
                 <span>{data.colors[0].discount + '%'}</span>
             </div> : null}
         </div>

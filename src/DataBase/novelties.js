@@ -5,8 +5,6 @@ class novelties {
     constructor(){
         makeAutoObservable(this)
     }
-
-
     novelties = []
     limit = 4
     page  = 1

@@ -29,7 +29,7 @@ const CollectionsPage = () => {
                     {!isLoading ?
                         collectionsPage.toJS_getCollPage_products.products.map(item =>
                             <div key={item.id} className={style.collectionsPage__item}>
-                                <Link to={`/ProductsPage/${item.colors[0].id}`}>
+                                <Link to={`/ProductsPage/${item.id}`}>
                                     <Card data={item} />
                                 </Link>
                             </div>

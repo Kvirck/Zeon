@@ -1,7 +1,7 @@
 import style from "./CardsBestsellers.module.scss";
-import CardBestseller from "./CardBestseller";
 import { Link } from "react-router-dom";
 import MoveUp from './../../../../Components/SecondaryFunc/ScrollTop/MoveUp';
+import Card from './../Card/CardV1/Card';
 
 const CardsBestsellers = ({ data=[] }) => {
     return <div>
@@ -9,7 +9,7 @@ const CardsBestsellers = ({ data=[] }) => {
             {data.map(e =>
                 <div key={e.id} className={style.card}>
                     <Link  onClick={()=>MoveUp()} to={`/ProductsPage/${e.id}`}>
-                    <CardBestseller data={e} />
+                    <Card  data={e}/>
                     </Link>
                 </div>
             )}

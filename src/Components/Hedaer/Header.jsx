@@ -21,7 +21,7 @@ const Header = (props) => {
             </li>
             <div className={style.navbar__phone}>
               <span className={style.navbarPhone}>Тел:</span>
-              <a  href="tel:+996 000 00 00 00" className={style.navbarPhone__num}>+996 000 00 00 00</a>
+              <a href="tel:+996 000 00 00 00" className={style.navbarPhone__num}>+996 000 00 00 00</a>
             </div>
           </div>
         </div>
@@ -36,10 +36,12 @@ const Header = (props) => {
             <form className={style.search}>
               <input type="text" placeholder="Поиск" />
             </form>
-            <div className={style.bottom__favorites}>
-              <img src="/img/heart-icon.svg" alt="heart-icon" />
-              <span>Избранное</span>
-            </div>
+            <Link to='/Favorites'>
+              <div className={style.bottom__favorites}>
+                <img src="/img/heart-icon.svg" alt="heart-icon" />
+                <span>Избранное</span>
+              </div>
+            </Link>
             <Link to='/Basket'>
               <div className={style.bottom__basket}>
                 <img src="/img/basket-icon.svg" alt="basket-icon" />

@@ -12,12 +12,14 @@ const ProductsPage = () => {
     const { id } = useParams()
     const [post, setPost] = useState(null)
     const [load, setLoad] = useState(true)
+
     useEffect(() => {
         collectionsPage.getProductsSimilar(setLoad)
         fetch(`http://localhost:80/products/${id}`)
             .then(res => res.json())
             .then(data => setPost(data.data))
     }, [id])
+ 
     return (
         <div className="container">
             {post && (

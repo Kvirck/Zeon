@@ -9,7 +9,7 @@ import collections from './../../DataBase/collections';
 import { observer } from 'mobx-react-lite';
 import cardsBesteller from "../../DataBase/cardsBesteller";
 import novelties from "../../DataBase/novelties";
-import Novelties from "./Cards/Novelties/CardsNovelties";
+import CardsNovelties from "./Cards/Novelties/CardsNovelties";
 
 const HomePage = () => {
 
@@ -24,10 +24,8 @@ const HomePage = () => {
                     {cardsBesteller.get_Stop ? <Buttun onClick={() => cardsBesteller.getCardBesteller()} /> : ''}
                     
                     <h2>Новинки</h2>
-                    <Novelties data={novelties.toJS_novelties}/>
+                    <CardsNovelties data={novelties.toJS_novelties}/>
                     {novelties.get_Stop ? <Buttun onClick={() => novelties.getNovelties()} /> : ''}
-
-
                     <h2>Коллекция</h2>
                     <CardsCollection  data={collections.get_Collections} />
                     {collections.get_Stop ? <Buttun onClick={() => collections.getCollections()} /> : ''}
