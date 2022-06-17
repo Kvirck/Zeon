@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { useEffect} from 'react';
+import { useEffect } from 'react';
 
 import './App.css';
 import HomePage from './Pages/HomePage/HomePage';
@@ -19,14 +19,18 @@ import Section from './Pages/SectionPage/SectionPage';
 import MiniHedaer from './Components/Hedaer/MiniHedaer';
 import CollectionsPage from './Pages/CollectionsPage/CollectionsPage';
 import Favorites from './Pages/Favorites/Favorites';
+import dataLinks from './DataBase/dataLinks';
 
 
 function App() {
+
+
   useEffect(() => {
     collections.getCollections()
     collectionsPage.getCollections()
     cardsBesteller.getCardBesteller()
     novelties.getNovelties()
+    dataLinks.getDataLinks()
   }, [])
 
   return (

@@ -3,8 +3,13 @@ import style from "./Card.module.scss"
 
 
 const Card = ({ data }) => {
-
     const store = JSON.parse(localStorage.getItem('favorites'))
+
+    if (!store) {
+        localStorage.setItem('favorites', JSON.stringify([]))
+    } else {
+    }
+
     let isFavorite
 
     if (store) {
@@ -16,14 +21,13 @@ const Card = ({ data }) => {
     } else {
         isFavorite = false
     }
-
-
+    
     return (
         <>
             <div className={style.card}>
                 <div className={style.card__img}>
                     <img src={`http://localhost${data.images[0]}`} alt="img" />
-                    <FavoritesIcon  id={data.id} isInFavorite={isFavorite}/>
+                    <FavoritesIcon id={data.id} isInFavorite={isFavorite} />
                     {data.colors[0].discount ? <div className={style.card__img__sale}>
                         <span>{data.colors[0].discount + '%'}</span>
                     </div> : null}

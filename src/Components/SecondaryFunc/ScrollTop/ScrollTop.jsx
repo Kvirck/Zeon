@@ -20,9 +20,9 @@ const ScrollTop = () => {
                 <div className={style.message}>
                     <CSSTransition in={show} classNames='alert' timeout={300} unmountOnExit >
                         <div className={style.socialNetwork}>
-                            <a className={style.socialNetwork__item} href="https://t.me/Kwirck"><img  src="/img/telegIcon.svg" alt="telegIcon" /></a>
-                            <a className={style.socialNetwork__item} href="https://wa.me/996509529922"><img  src="/img/whatsIcon.svg" alt="whatsIcon" /></a>
-                            <img onClick={()=>{setModalActive(!modalactive)}} className={style.socialNetwork__item} src="/img/telephIcon.svg" alt="telephIcon" />
+                            <a className={style.socialNetwork__item} target="blank" href="https://t.me/Zeonitcommunity"><img src="/img/telegIcon.svg" alt="telegIcon" /></a>
+                            <a className={style.socialNetwork__item} target="blank" href="https://wa.me/996509529922"><img src="/img/whatsIcon.svg" alt="whatsIcon" /></a>
+                            <img onClick={() => { setModalActive(!modalactive) }} className={style.socialNetwork__item} src="/img/telephIcon.svg" alt="telephIcon" />
                         </div>
                     </CSSTransition>
                     <div onClick={() => setShow(!show)} >

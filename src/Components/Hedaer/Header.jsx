@@ -1,8 +1,23 @@
 import style from "./Header.module.scss";
 import { Link, } from 'react-router-dom';
+import dataLinks from "../../DataBase/dataLinks";
+import { observer } from 'mobx-react-lite';
 
 
 const Header = (props) => {
+  const fav = localStorage.getItem('favorites')
+  let favFact
+  const favFucn = () => {
+    if (fav.length === 2) {
+      return favFact = false
+    }
+    if (fav.length !== 2) {
+      return favFact = true
+    }
+  }
+  favFucn()
+
+  const data = dataLinks.toJS_links
   return (
     <div className={style.header}>
       <div className={style.navbar}>
@@ -21,7 +36,7 @@ const Header = (props) => {
             </li>
             <div className={style.navbar__phone}>
               <span className={style.navbarPhone}>Тел:</span>
-              <a href="tel:+996 000 00 00 00" className={style.navbarPhone__num}>+996 000 00 00 00</a>
+              <a href={data[0]?.phone1} className={style.navbarPhone__num}>+996 000 00 00 00</a>
             </div>
           </div>
         </div>
@@ -34,11 +49,18 @@ const Header = (props) => {
               </Link>
             </div>
             <form className={style.search}>
-              <input type="text" placeholder="Поиск" />
+              <input
+                type="text"
+                placeholder="Поиск"
+                onChange={event=>console.log(event.target.value)}
+              />
             </form>
             <Link to='/Favorites'>
               <div className={style.bottom__favorites}>
-                <img src="/img/heart-icon.svg" alt="heart-icon" />
+                <div className={style.bottom__favorites__icon}>
+                  <img src="/img/heart-icon.svg" alt="heart-icon" />
+                  <div className={favFact ? `${style.bottom__favorites__red} ${style.bottom__favorites__active}` : style.bottom__favorites__red}></div>
+                </div>
                 <span>Избранное</span>
               </div>
             </Link>
@@ -55,4 +77,4 @@ const Header = (props) => {
     </div>
   );
 };
-export default Header;
+export default observer(Header);
