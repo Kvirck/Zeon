@@ -45,7 +45,7 @@ const MiniHedaer = () => {
           </div>
           <div className={style.logo}>
             <Link to='/'>
-              <img src="/img/logo.svg" alt="logo" />
+              <img src="/img/MiniLogo.svg" alt="logo" />
             </Link>
           </div>
           <div className={style.searchBox}>

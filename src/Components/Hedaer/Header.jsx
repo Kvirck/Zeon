@@ -2,10 +2,9 @@ import style from "./Header.module.scss";
 import { Link, } from 'react-router-dom';
 import dataLinks from "../../DataBase/dataLinks";
 import { observer } from 'mobx-react-lite';
-import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-const Header = (props) => {
+const Header = ({onChange}) => {
 
   const fav = localStorage.getItem('favorites')
   let favFact
@@ -18,7 +17,6 @@ const Header = (props) => {
     }
   }
   favFucn()
-
   const data = dataLinks.toJS_links
 
 
@@ -29,9 +27,9 @@ const Header = (props) => {
   const navigate = useNavigate();
   const searchGo = () => navigate('./SearchPage')
 
-  const [value, setValue] = useState('')
-  console.log(value);
-  
+  const handlerValue = (event) => {
+    onChange(event.target.value)
+  }
   return (
     <div className={style.header}>
       <div className={style.navbar}>
@@ -66,11 +64,11 @@ const Header = (props) => {
               <input
                 type="text"
                 placeholder="Поиск"
-                onChange={event => setValue(event.target.value)}
+                onChange={handlerValue}
                 onKeyPress={e => {
                   if (e.key === 'Enter') {
                     searchGo()
-                  } else console.log('sad');
+                  } else;
                 }}
               />
             </form>

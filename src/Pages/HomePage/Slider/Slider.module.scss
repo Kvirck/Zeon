@@ -1,20 +1,28 @@
-.mySwiper{
-    margin-top: 10px;
+.mySwiper {
+  margin-top: 10px;
 }
+
 .swiper {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .swiper-slide {
-    background-position: center;
-    background-size: cover;
-  }
-  
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 320px) {
   .swiper-slide img {
-    display: block;
-    width: 100%;
+    width: 320px;
   }
-.mySwiper img{
+}
+
+.mySwiper img {
   padding-bottom: 25px;
 }

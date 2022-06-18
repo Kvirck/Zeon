@@ -3,6 +3,12 @@
   padding-bottom: 0.7px;
 }
 
+@media screen and (max-width: 320px) {
+  .navbar {
+    display: none;
+  }
+}
+
 .inner {
   width: 100%;
   background: #FFFFFF;
@@ -142,9 +148,11 @@ ul {}
         height: 10px;
         transform: scale(0);
       }
-      &__active{
+
+      &__active {
         transform: scale(1);
       }
+
       span {
         font-style: normal;
         font-weight: 500;

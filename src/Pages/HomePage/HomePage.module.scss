@@ -7,3 +7,13 @@ h2 {
     line-height: 29px;
     color: #393939;
 }
+
+
+
+@media screen and (max-width: 320px) {
+    .slider{
+        img{
+            max-width: 320px
+        }
+    }
+}

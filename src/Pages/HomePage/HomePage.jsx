@@ -17,17 +17,19 @@ const HomePage = () => {
     return (
         <div className={style.content}>
             <div className="container">
-                <Slider />
+                <div className={style.slider}>
+                    <Slider />
+                </div>
                 <div className={style.bestseller}>
                     <h2>Хит продаж</h2>
                     <CardsBestsellers data={cardsBesteller.toJS_cardsBesteller} />
                     {cardsBesteller.get_Stop ? <Buttun onClick={() => cardsBesteller.getCardBesteller()} /> : ''}
-                    
+
                     <h2>Новинки</h2>
-                    <CardsNovelties data={novelties.toJS_novelties}/>
+                    <CardsNovelties data={novelties.toJS_novelties} />
                     {novelties.get_Stop ? <Buttun onClick={() => novelties.getNovelties()} /> : ''}
                     <h2>Коллекция</h2>
-                    <CardsCollection  data={collections.get_Collections} />
+                    <CardsCollection data={collections.get_Collections} />
                     {collections.get_Stop ? <Buttun onClick={() => collections.getCollections()} /> : ''}
                 </div>
                 <ScrollTop />

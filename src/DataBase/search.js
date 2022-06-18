@@ -5,16 +5,26 @@ class search {
     constructor() {
         makeAutoObservable(this)
     }
-    data = []
-    async getNovelties(value) {
-        await axios.get(`http://localhost/products/search?q=${value}`)
+    product = []
+    links = []
+    currentPage = 1
+    async getSearch(value) {
+        await axios.get(`http://localhost/products/search?limit=16&page=1&q=${value}`)
             .then(res => {
-                this.data = res
-                console.log(res);
+                this.product = res.data.data
+                this.links = res.data.meta.links
+                this.currentPage = res.data.meta.page
             })
+            .catch(err=>console.log(`err`,err))
     }
-    get toJS__data() {
-        return toJS(this.data)
+    get toJS__product() {
+        return toJS(this.product)
+    }
+    get toJS__links() {
+        return toJS(this.links)
+    }
+    get toJS__currentPage() {
+        return toJS(this.currentPage)
     }
 }
 

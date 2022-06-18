@@ -21,11 +21,16 @@ import CollectionsPage from './Pages/CollectionsPage/CollectionsPage';
 import Favorites from './Pages/Favorites/Favorites';
 import dataLinks from './DataBase/dataLinks';
 import SearchPage from './Pages/SearchPage/SearchPage';
+import { useState } from 'react';
 
 
 function App() {
 
+  const [value, setValue] = useState('')
 
+  const handlerValue = (value) => {
+    setValue(value)
+  }
   useEffect(() => {
     collections.getCollections()
     collectionsPage.getCollections()
@@ -36,9 +41,10 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <Header onChange={handlerValue} />
       <MiniHedaer />
       <Routes>
+        <Route path='/SearchPage' element={<SearchPage value={value}  />} />
         <Route path='/' element={<HomePage />} />
         <Route path='/NewsPage' element={<NewsPage />} />
         <Route path='/AboutAs' element={<AboutAs />} />
@@ -49,7 +55,6 @@ function App() {
         <Route path='/Section' element={<Section />} />
         <Route path='/Collections/:id' element={<CollectionsPage />} />
         <Route path='/Favorites' element={<Favorites />} />
-        <Route path='/SearchPage' element={<SearchPage />} />
       </Routes>
       <Footer />
     </div>
