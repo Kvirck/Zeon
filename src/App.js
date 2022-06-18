@@ -20,6 +20,7 @@ import MiniHedaer from './Components/Hedaer/MiniHedaer';
 import CollectionsPage from './Pages/CollectionsPage/CollectionsPage';
 import Favorites from './Pages/Favorites/Favorites';
 import dataLinks from './DataBase/dataLinks';
+import SearchPage from './Pages/SearchPage/SearchPage';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
         <Route path='/Section' element={<Section />} />
         <Route path='/Collections/:id' element={<CollectionsPage />} />
         <Route path='/Favorites' element={<Favorites />} />
+        <Route path='/SearchPage' element={<SearchPage />} />
       </Routes>
       <Footer />
     </div>

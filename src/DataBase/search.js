@@ -1,20 +1,21 @@
 import axios from "axios"
 import { makeAutoObservable, toJS } from 'mobx';
 
-class novelties {
-    constructor(){
+class search {
+    constructor() {
         makeAutoObservable(this)
     }
     data = []
-    getNovelties (){
-        axios.get(`http://localhost/products/search?q=${value}`)
-        .then(res=>{
-            console.log(res);
-        })
+    async getNovelties(value) {
+        await axios.get(`http://localhost/products/search?q=${value}`)
+            .then(res => {
+                this.data = res
+                console.log(res);
+            })
     }
-    get get_Stop(){
-        return toJS(this.stop)  
+    get toJS__data() {
+        return toJS(this.data)
     }
 }
 
-export default new novelties()
+export default new search()

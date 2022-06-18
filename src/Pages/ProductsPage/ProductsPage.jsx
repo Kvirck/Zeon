@@ -92,7 +92,7 @@ const ProductsPage = () => {
                 </div>
             )}
             <div className={style.similarProducts}>
-                <p className={style.similarProducts__title}>Похожие товары</p>
+                <p className={style.similarProducts__title}>Похожие товары</p>  
                 <div className={style.similarProduct} >
                     {!load ? collectionsPage.toJS_getProductsSimilar.data.map(item =>
                         <div className={style.similarProduct__item} key={item.id}>
