@@ -11,7 +11,8 @@
     justify-content: center;
     pointer-events: none;
     opacity: 0;
-    transition: 0.5s;   
+    transition: 0.5s;
+
     &__content {
         padding: 29px 24px;
         background-color: #FFFFFF;
@@ -45,12 +46,43 @@
         font-size: 14px;
         line-height: 17px;
         color: #FFFFFF;
+        white-space: nowrap;
+        /* Текст не переносится */
         border: none;
         outline: none;
         cursor: pointer;
     }
 }
-.modals.active{
+
+@media screen and (max-width: 320px) {
+    .modals {
+        &__content {
+            padding: 25px 16px;
+        }
+
+        &__text {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 100%;
+        }
+
+        &__description {
+            text-align: center;
+            margin: 0 auto;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 150%;
+            max-width: 256px;
+        }
+
+        &__btn {
+            padding: 14px 64px;
+            margin: 15px 0 0 0;
+        }
+    }
+}
+
+.modals.active {
     opacity: 1;
     transform: scale(1);
     pointer-events: all;

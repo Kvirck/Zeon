@@ -12,6 +12,7 @@
     pointer-events: none;
     opacity: 0;
     transition: 0.5s;
+
     &__iconX {
         display: block;
         margin-left: auto;
@@ -60,7 +61,8 @@
             color: #BEBEBE;
         }
     }
-    &__call{
+
+    &__call {
         input {
             background-image: url(./../../../../../public/img/callIcon.svg);
             background-repeat: no-repeat;
@@ -82,6 +84,7 @@
     input {
         margin-bottom: 11px;
     }
+
     input::placeholder {
         font-style: normal;
         font-weight: 400;
@@ -89,6 +92,7 @@
         line-height: 17px;
         color: #BEBEBE;
     }
+
     button {
         padding: 14px 120px;
         background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), #1D1D1B;
@@ -101,11 +105,65 @@
     }
 
 }
-.modal.active{
+
+@media screen and (max-width: 320px) {
+    .modal {
+        &__content {
+            padding: 24px 16px;
+        }
+
+        &__description {
+            max-width: 258px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 150%;
+        }
+
+        h2 {
+            margin: 0;
+        }
+
+        &__text {
+            text-align: left;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 125%;
+        }
+
+        &__user {
+            input {
+                min-width: 230px;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+
+        &__call {
+            input {
+                min-width: 230px;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+
+        button {
+            padding: 13px 87px;
+        }
+    }
+}
+
+.modal.active {
     opacity: 1;
     transform: scale(1);
     pointer-events: all;
 }
-.modal__btn.active{
+
+.modal__btn.active {
     background: #1D1D1B;
 }

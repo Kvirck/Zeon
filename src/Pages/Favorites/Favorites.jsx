@@ -6,6 +6,7 @@ import favorites from "../../DataBase/favorites";
 import Card from './../HomePage/Cards/Card/CardV1/Card';
 import { observer } from 'mobx-react-lite';
 import { useState } from 'react';
+import SimilarProduct from '../../Components/SecondaryFunc/SimilarProduct/SimilarProduct';
 
 const Favorites = () => {
     const id = JSON.parse(localStorage.getItem('favorites'))
@@ -41,7 +42,12 @@ const Favorites = () => {
                         </div>
                     </div>
                     :
-                    <p>У Вас пока нет товаров в избранном</p>}
+                    <div>
+                        <p>У Вас пока нет товаров в избранном</p>
+                        <p className={style.similarProduct}>Возможно Вас заинтересует</p>
+                        <SimilarProduct />
+                    </div>
+                }
 
             </div>
 

@@ -32,3 +32,23 @@
         margin-bottom: 18px;
     }
 }
+
+.similarProduct {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #393939;
+    margin: 48px 0 16px;
+}
+
+@media screen and (max-width: 320px) {
+    .favorites{
+        margin-left: 16px;
+    }
+    .similarProduct {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+    }
+}

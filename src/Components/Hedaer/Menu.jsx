@@ -1,7 +1,11 @@
 import './styleHeaderMini.css'
 import { Link, } from 'react-router-dom';
+import { useState } from "react"
+import ModalCall from '../SecondaryFunc/ModalWindow/ModalCall/ModalCall';
 
 const Menu = ({ active, setActive }) => {
+    const [modalactive, setModalActive] = useState(false)
+
     return (
         <div className={active ? 'menu active' : 'menu'} onClick={() => setActive(false)}>
             <div className="menu__header" onClick={e => e.stopPropagation()}>
@@ -51,8 +55,9 @@ const Menu = ({ active, setActive }) => {
                 <div className='menu__icons'>
                     <a className='menu__icon' target="blank" href="https://t.me/Zeonitcommunity"><img src="/img/telegIcon.svg" alt="telegIcon" /></a>
                     <a className='menu__icon' target="blank" href="https://wa.me/996509529922"><img src="/img/whatsIcon.svg" alt="whatsIcon" /></a>
-                    <img className='menu__icon' src="/img/telephIcon.svg" alt="telephIcon" />
+                    <img onClick={() => { setModalActive(!modalactive) }} className='menu__icon' src="/img/telephIcon.svg" alt="telephIcon" />
                 </div>
+                <ModalCall active={modalactive} setActive={setModalActive} />
             </div>
         </div >
     )
