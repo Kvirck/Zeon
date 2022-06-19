@@ -231,8 +231,92 @@
 
 }
 
-.similarProducts {
+@media screen and (max-width: 320px) {
+    .productsPage {
+        flex-wrap: wrap;
+        margin-left: 16px;
 
+        &__img {
+            img {
+                max-width: 262px;
+            }
+        }
+
+        &__text {
+            max-width: 268px;
+            padding: 18px 12px;
+        }
+
+        &__title {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        &__identification {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            margin: 20px 0 14px;
+
+            span {
+                line-height: 17px;
+            }
+        }
+
+        &__color {
+            p {
+                font-weight: 400;
+            }
+        }
+
+        &__price {
+            margin: 20px 0 18px;
+
+            &New {
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 22px;
+            }
+
+            &Old {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+
+        &__info {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+        }
+
+        &__description {
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 170%;
+        }
+
+        &__characteristics {
+            display: block;
+        }
+
+        &__addToBasket {
+            padding: 0 34px 0 22px;
+
+            p {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+    }
+}
+
+.similarProducts {
     &__title {
         font-family: 'Montserrat';
         font-style: normal;
@@ -241,15 +325,19 @@
         line-height: 29px;
         color: #393939;
         margin-bottom: 16px;
-
     }
 
 }
 
-.similarProduct {
-    display: flex;
-    margin-bottom: 84px;
-    &__item {
-        margin: 3px;
+@media screen and (max-width: 320px) {
+    .similarProducts {
+        margin-left: 17px;
+
+        &__title {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+        }
     }
 }

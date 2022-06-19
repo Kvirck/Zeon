@@ -13,6 +13,12 @@
 
 }
 
+@media screen and (max-width: 320px) {
+    .newsPage{
+        margin: 16px ;
+    }
+}
+
 .content {
     &__item {
         margin-bottom: 12px;

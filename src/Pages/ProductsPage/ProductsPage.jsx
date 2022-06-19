@@ -2,24 +2,20 @@ import style from "./ProductsPage.module.scss"
 import 'react-medium-image-zoom/dist/styles.css'
 import { useState } from 'react';
 import ModallPhoto from "./ModallPhoto";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect } from 'react';
-import Card from "../HomePage/Cards/Card/CardV1/Card";
-import collectionsPage from "../../DataBase/collectionsPage";
-import MoveUp from './../../Components/SecondaryFunc/ScrollTop/MoveUp';
+import SimilarProduct from "../../Components/SecondaryFunc/SimilarProduct/SimilarProduct";
 
 const ProductsPage = () => {
     const { id } = useParams()
     const [post, setPost] = useState(null)
-    const [load, setLoad] = useState(true)
 
     useEffect(() => {
-        collectionsPage.getProductsSimilar(setLoad)
         fetch(`http://localhost:80/products/${id}`)
             .then(res => res.json())
             .then(data => setPost(data.data))
     }, [id])
- 
+
     return (
         <div className="container">
             {post && (
@@ -92,16 +88,8 @@ const ProductsPage = () => {
                 </div>
             )}
             <div className={style.similarProducts}>
-                <p className={style.similarProducts__title}>Похожие товары</p>  
-                <div className={style.similarProduct} >
-                    {!load ? collectionsPage.toJS_getProductsSimilar.data.map(item =>
-                        <div className={style.similarProduct__item} key={item.id}>
-                            <Link onClick={()=>MoveUp()} to={`/ProductsPage/${item.colors[0].id}`}>
-                                <Card data={item} />
-                            </Link>
-                        </div>
-                    ) : null}
-                </div>
+                <p className={style.similarProducts__title}>Похожие товары</p>
+                <SimilarProduct />
             </div>
         </div >
     )

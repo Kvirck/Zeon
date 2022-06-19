@@ -11,3 +11,20 @@ margin:8px 3px 3px ;
         margin: 0 16px ;
     }
 }
+
+.mini{
+    display: none;
+}
+.not__mini{
+    display: block;
+}
+@media screen and (max-width: 320px) {
+    .mini{
+        display: block;
+    }
+}
+@media screen and (max-width: 320px) {
+    .not__mini{
+        display: none;
+    }
+}

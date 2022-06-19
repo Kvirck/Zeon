@@ -8,6 +8,8 @@
         }
     }
 
+
+
     &__text {
         margin-left: 24px;
 
@@ -18,6 +20,22 @@
             line-height: 29px;
             color: #393939;
             margin-bottom: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .help {
+    flex-wrap: wrap;
+        &__img {
+            img {
+                width: 288px;
+                margin: 24px 0 24px 12px;
+            }
+        }
+
+        &__text {
+            margin: 12px;
         }
     }
 }

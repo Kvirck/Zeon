@@ -34,6 +34,22 @@
         }
     }
 
+    @media screen and (max-width: 320px) {
+        .collaps {
+            &__text {
+                width: 258px;
+            }
+
+            &__title {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 16px;
+                color: #393939;
+            }
+        }
+    }
+
     .active {
         display: block;
     }
@@ -46,7 +62,7 @@
 
     .rotate {
         svg {
-            transition: 1.5s;
-            transform: rotate(540deg);
+            transition: 3.5s;
+            transform: rotate(11340deg);
         }
     }

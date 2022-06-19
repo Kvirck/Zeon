@@ -8,11 +8,12 @@
         margin: 11px 0 34px;
     }
 
-    &__description{
+    &__description {
         padding: 16px;
         background: #FFFFFF;
         margin-bottom: 70px;
     }
+
     &__text {
         margin-bottom: 15px;
         font-style: normal;
@@ -21,4 +22,29 @@
         line-height: 165%;
         color: #5B5B5B;
     }
+}
+
+@media screen and (max-width: 320px) {
+
+    .publicOffer {
+        margin: 0 16px;
+
+        &__title {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            color: #393939;
+            margin: 24px 0 27px;
+        }
+
+        &__description  {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 160%;
+            color: #354455;
+        }
+    }
+
 }

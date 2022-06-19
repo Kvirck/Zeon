@@ -5,10 +5,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 // import required modules
 import { Pagination } from "swiper";
-const CardsCollection = ({ data = [], adaptive }) => {
+const CardsCollection = ({ data = [] }) => {
 
     return <div>
-        {adaptive ?
+        <div className={style.mini}>
             <div className={style.cardsCollection}>
                 <Swiper
                     slidesPerView={1.2}
@@ -27,16 +27,17 @@ const CardsCollection = ({ data = [], adaptive }) => {
                     )}
                 </Swiper>
             </div>
-            :
+        </div>
+        <div className={style.not__mini}>
             <div className={style.cardsCollection}>
-                {data.map(e =>
-                    <div key={e.id} className={style.cardsCollection__item}>
+                {data.map((e, i) =>
+                    <div key={e.id + i} className={style.cardsCollection__item}>
                         <CardCollection id={e.id} data={e} />
                     </div>
 
                 )}
             </div>
-        }
+        </div>
 
     </div>
 }

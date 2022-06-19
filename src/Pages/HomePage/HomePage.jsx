@@ -12,7 +12,6 @@ import novelties from "../../DataBase/novelties";
 import CardsNovelties from "./Cards/Novelties/CardsNovelties";
 
 const HomePage = () => {
-    const adaptive = window.matchMedia("(max-width: 320px)").matches;
     return (
         <div className={style.homePage}>
 
@@ -22,13 +21,13 @@ const HomePage = () => {
                 </div>
                 <div className={style.cards}>
                     <h2>Хит продаж</h2>
-                    <CardsBestsellers adaptive={adaptive} data={cardsBesteller.toJS_cardsBesteller} />
+                    <CardsBestsellers data={cardsBesteller.toJS_cardsBesteller} />
                     {cardsBesteller.get_Stop ? <Buttun onClick={() => cardsBesteller.getCardBesteller()} /> : ''}
                     <h2>Новинки</h2>
-                    <CardsNovelties adaptive={adaptive} data={novelties.toJS_novelties} />
+                    <CardsNovelties data={novelties.toJS_novelties} />
                     {novelties.get_Stop ? <Buttun onClick={() => novelties.getNovelties()} /> : ''}
                     <h2>Коллекция</h2>
-                    <CardsCollection adaptive={adaptive} data={collections.get_Collections} />
+                    <CardsCollection  data={collections.get_Collections} />
                     {collections.get_Stop ? <Buttun onClick={() => collections.getCollections()} /> : ''}
                 </div>
                 <ScrollTop />

@@ -20,7 +20,7 @@ const Footer = (props) => {
                     <Link to="/NewsPage" onClick={() => MoveUp()}>Новости</Link>
                     <Link to="/Help" onClick={() => MoveUp()}>Помощь </Link>
                     <div className={style.publicOffer}>
-                        <Link to="//PublicOffer" onClick={() => MoveUp()}>Публичная оферта </Link>
+                        <Link to="/PublicOffer" onClick={() => MoveUp()}>Публичная оферта </Link>
                     </div>
                 </div>
                 <div className={style.contacts}>

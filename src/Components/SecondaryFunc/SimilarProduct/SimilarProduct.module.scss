@@ -21,3 +21,19 @@
         margin: 3px;
     }
 }
+.mini{
+    display: none;
+}
+.not__mini{
+    display: block;
+}
+@media screen and (max-width: 320px) {
+    .mini{
+        display: block;
+    }
+}
+@media screen and (max-width: 320px) {
+    .not__mini{
+        display: none;
+    }
+}

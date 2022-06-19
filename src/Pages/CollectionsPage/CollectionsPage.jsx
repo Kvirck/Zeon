@@ -7,11 +7,12 @@ import Card from './../HomePage/Cards/Card/CardV1/Card';
 import { observer } from 'mobx-react-lite';
 import { useState } from 'react';
 import RoutingsNum from "../../Components/SecondaryFunc/RoutingsNumV2/RoutingsNum";
+import SimilarProduct from "../../Components/SecondaryFunc/SimilarProduct/SimilarProduct";
 
 const CollectionsPage = () => {
     const { id } = useParams()
     const [isLoading, setLoading] = useState(true)
-   
+
     useEffect(() => {
         async function load() {
             await collectionsPage.getCollectionsPage(`http://localhost/collections/${id}?limit=12&page=1`)
@@ -38,11 +39,12 @@ const CollectionsPage = () => {
                         null
                     }
                 </div>
-
                 <div className={style.collectionsPage__routingsNum}>
                     <RoutingsNum currentPage={collectionsPage.toJS_getCollPage_currentPage}
                         links={collectionsPage.toJS_getCollPage_Links} axiosFunc={(url) => collectionsPage.getCollectionsPageNew(url)} />
                 </div>
+                <p className={style.new}>Новинки</p>
+                <SimilarProduct/>
             </div>
             <ScrollTop />
         </div >

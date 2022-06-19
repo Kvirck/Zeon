@@ -1,6 +1,6 @@
 .routingsNum {
     display: flex;
-
+  
     &__btn {
         padding: 13px 17px;
         font-family: 'Inter';
@@ -15,7 +15,7 @@
         background: #FFFFFF;
         border: none;
     }
-
+  
     .active {
         color: #FFFFFF;
         background: #1D1D1B;
@@ -37,7 +37,11 @@
         }
     }
 }
-
+@media screen and (max-width: 320px) {
+    .routingsNum{
+        margin: 16px 0 64px;
+    }
+}
 .routingsNum__btn:first-child {
     font-size: 0;
     background-image: url('./../../../../public/img/ArrowLeftPlagin.svg');
