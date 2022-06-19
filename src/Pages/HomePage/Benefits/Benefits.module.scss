@@ -3,10 +3,24 @@
     margin-bottom: 64px;
 }
 
+@media screen and (max-width: 320px) {
+    .benefits {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 196px;
+    }
+
+    .benefit {
+        margin-bottom: 8px;
+    }
+}
+
 .benefit {
     background: #FFFFFF;
     width: 286px;
     height: 248px;
+
     &__content {
         text-align: center;
 

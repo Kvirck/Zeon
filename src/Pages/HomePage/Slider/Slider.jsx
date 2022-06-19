@@ -28,16 +28,28 @@ const Slider = () => {
         className={style.mySwiper}>
 
         <SwiperSlide>
-            <img src="/img/contentImg.png" alt=""  />
+
+            <div className={style.bagImage}>
+                <img src="/img/contentImg.png" alt="" />
+            </div>
         </SwiperSlide>
         <SwiperSlide>
-            <img src="/img/contentImg.png" alt="" />
+
+            <div className={style.bagImage}>
+                <img src="/img/contentImg.png" alt="" />
+            </div>
         </SwiperSlide>
         <SwiperSlide>
-            <img src="/img/contentImg.png" alt="" />
+
+            <div className={style.bagImage}>
+                <img src="/img/contentImg.png" alt="" />
+            </div>
         </SwiperSlide>
         <SwiperSlide>
-            <img src="/img/contentImg.png" alt="" />
+
+            <div className={style.bagImage}>
+                <img src="/img/contentImg.png" alt="" />
+            </div>
         </SwiperSlide>
     </Swiper>
 }

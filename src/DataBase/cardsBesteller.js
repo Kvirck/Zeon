@@ -8,7 +8,7 @@ class cardsBesteller {
     }
 
     cardsBesteller = []; // свойства 
-    limit = 4;
+    limit = 8;
     page = 1
     stop = true
     getCardBesteller() {

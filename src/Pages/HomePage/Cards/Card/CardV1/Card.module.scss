@@ -9,8 +9,6 @@
         padding: 0;
     }
 
- 
-
     &__img {
         &__sale {
             content: '';
@@ -99,5 +97,11 @@
         height: 8px;
         opacity: 0.47;
         border-radius: 4px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .card {
+        max-width: 262px;
     }
 }

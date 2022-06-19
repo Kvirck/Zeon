@@ -9,11 +9,20 @@ h2 {
 }
 
 
+.asdasda {
+    display: none;
+}
 
 @media screen and (max-width: 320px) {
-    .slider{
-        img{
-            max-width: 320px
-        }
+    .slider {
+        margin-top: 24px;
+    }
+    h2 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: #393939;
+        margin: 22px;
     }
 }

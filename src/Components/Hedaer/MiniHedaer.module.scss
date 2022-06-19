@@ -1,17 +1,28 @@
+.miniHedaer{
+  position: relative;
+}
 .header {
   background-color: #fff;
+  padding: 10px 5px;
+
   &__content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
   }
-  .searchBox{
+
+  .searchBox {
     position: relative;
   }
 
 }
+
 @media screen and (min-width: 321px) {
-  .header{
+  .header {
     display: none;
   }
+}
+
+.activeMenu {
+  display: none;
 }

@@ -1,8 +1,15 @@
-.cardsCollection{
+.cardsCollection {
     display: flex;
     flex-wrap: wrap;
-    &__item{
+
+    &__item {
         margin: 3px;
     }
 }
 
+
+@media screen and (max-width: 320px) {
+    .cardsCollection {
+        margin: 0 16px;
+    }
+}

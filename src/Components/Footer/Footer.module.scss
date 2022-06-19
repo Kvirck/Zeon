@@ -5,6 +5,7 @@
     &__item {
         display: flex;
     }
+
     p {
         margin-block-start: 0;
         margin-bottom: 17px;
@@ -16,7 +17,15 @@
     }
 }
 
+@media screen and (max-width: 320px) {
+    .footer {
+        padding-left: 16px;
 
+        &__item {
+            display: block;
+        }
+    }
+}
 
 .logo {
     margin-right: 123px;
@@ -33,6 +42,12 @@
     }
 }
 
+@media screen and (max-width: 320px) {
+    .logo {
+        margin-bottom: 26px;
+    }
+}
+
 .сompany {
     a {
         display: block;
@@ -46,17 +61,27 @@
     }
 }
 
+@media screen and (max-width: 320px) {
+    .сompany {
+        margin-bottom: 24px;
+    }
+}
+
 .contacts {
-    margin: 0 150px ;
+    margin: 0 150px;
+
     img {
         margin-right: 7px;
     }
-    div{
+
+    div {
         display: flex;
         align-items: center;
         margin-bottom: 12px;
     }
-    span, a {
+
+    span,
+    a {
         display: block;
         font-style: normal;
         font-weight: 400;
@@ -64,19 +89,34 @@
         line-height: 17px;
         color: #FFFFFF;
     }
-    a{
+
+    a {
         text-decoration: none;
     }
 }
-.socialNetwork{
+
+@media screen and (max-width: 320px) {
+    .contacts {
+        margin: auto;
+        .contacts__num {
+            display: flex;
+            align-items: center;
+            margin-bottom: 13px;
+        }
+    }
+}
+
+.socialNetwork {
     img {
         margin-right: 7px;
     }
-    div{
+
+    div {
         display: flex;
         align-items: center;
         margin-bottom: 12px;
     }
+
     a {
         display: block;
         text-decoration: none;
@@ -85,6 +125,29 @@
         font-size: 14px;
         line-height: 17px;
         color: #FFFFFF;
+    }
+}
+@media screen and (max-width: 320px) {
+    .socialNetwork{
+        margin: 24px 0 18px;
+    }
+}
+.developed {
+    margin-top: 16px;
+    display: block;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #B9B9B9;
+}
 
+.publicOffer{
+    display: none;
+}
+@media screen and (max-width: 320px) {
+    .publicOffer{
+        display: block;
     }
 }

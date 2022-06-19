@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
 
-import './App.css';
+import './App.scss';
 import HomePage from './Pages/HomePage/HomePage';
 import Header from './Components/Hedaer/Header';
 import Footer from './Components/Footer/Footer';
@@ -22,10 +22,10 @@ import Favorites from './Pages/Favorites/Favorites';
 import dataLinks from './DataBase/dataLinks';
 import SearchPage from './Pages/SearchPage/SearchPage';
 import { useState } from 'react';
+import PublicOffer from './Pages/PublicOffer/PublicOffer';
 
 
 function App() {
-
   const [value, setValue] = useState('')
 
   const handlerValue = (value) => {
@@ -44,7 +44,7 @@ function App() {
       <Header onChange={handlerValue} />
       <MiniHedaer />
       <Routes>
-        <Route path='/SearchPage' element={<SearchPage value={value}  />} />
+        <Route path='/SearchPage' element={<SearchPage value={value} />} />
         <Route path='/' element={<HomePage />} />
         <Route path='/NewsPage' element={<NewsPage />} />
         <Route path='/AboutAs' element={<AboutAs />} />
@@ -55,6 +55,8 @@ function App() {
         <Route path='/Section' element={<Section />} />
         <Route path='/Collections/:id' element={<CollectionsPage />} />
         <Route path='/Favorites' element={<Favorites />} />
+        <Route path='/PublicOffer' element={<PublicOffer />} />
+
       </Routes>
       <Footer />
     </div>

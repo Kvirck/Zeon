@@ -2,13 +2,19 @@
     max-width: 286px;
 
     &__img {
-        min-width: 286px;
-        min-height: 330px;
+        width: 286px;
+        height: 330px;
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;
         align-items: flex-end;
         justify-content: center;
+    }
+
+    @media screen and (max-width: 320px) {
+        &__img {
+            width: auto;
+        }
     }
 
     p {
@@ -46,10 +52,12 @@
         cursor: pointer;
         background-color: #FFFFFF;
         transition: 0.5s;
+
         button {
             color: #1D1D1B;
             cursor: pointer;
         }
+
         svg path {
             fill: #1D1D1B
         }

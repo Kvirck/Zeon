@@ -10,7 +10,11 @@
     text-align: end;
     cursor: pointer;
 }
-
+@media screen and (max-width: 320px) {
+    .scrollTop {
+      display: none;
+    }
+  }
 .message {
     display: flex;
     margin-top: 29px;
