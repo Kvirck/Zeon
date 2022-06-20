@@ -8,14 +8,27 @@ class search {
     product = []
     links = []
     currentPage = 1
-    async getSearch(value) {
-        await axios.get(`http://localhost/products/search?limit=16&page=1&q=${value}`)
+    url = ''
+    async getSearch(url) {
+        await axios.get(url)
             .then(res => {
                 this.product = res.data.data
                 this.links = res.data.meta.links
                 this.currentPage = res.data.meta.page
+                this.url = url
             })
-            .catch(err=>console.log(`err`,err))
+            .catch(err => console.log(`err`, err))
+    }
+    async getSearchNew(url) {
+        await axios.get(url)
+            .then(res => {
+                this.links = res.data.meta.links
+                this.currentPage = res.data.meta.page
+                this.product = res.data.data
+                this.url = url
+            }
+            )
+
     }
     get toJS__product() {
         return toJS(this.product)

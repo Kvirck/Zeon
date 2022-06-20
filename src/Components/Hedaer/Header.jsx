@@ -25,7 +25,7 @@ const Header = ({onChange}) => {
 
 
   const navigate = useNavigate();
-  const searchGo = () => navigate('./SearchPage')
+  const searchGo = () => navigate('/SearchPage')
 
   const handlerValue = (event) => {
     onChange(event.target.value)

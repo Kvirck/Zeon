@@ -33,7 +33,7 @@ const Card = ({ data }) => {
                     </div> : null}
                 </div>
                 <div className={style.card__description}>
-                    <p className={style.card__name}>{data.small_name}</p>
+                    <p className={style.card__name}>{data.name}</p>
                     <p className={style.card__price}>
                         {data.colors[0].current_price ? data.colors[0].current_price + " р " : ''}
                         <span className={data.colors[0].current_price ? style.card__priceOld : ''} >

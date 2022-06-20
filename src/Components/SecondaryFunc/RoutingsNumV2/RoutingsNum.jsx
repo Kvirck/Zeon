@@ -7,12 +7,12 @@ const RoutingsNum = ({ links, currentPage, axiosFunc = () => console.log('ok') }
             behavior: "smooth"
         }))
     }
-  
+
     return (
         <div>
             <div className={style.routingsNum}>
                 {links.map((item, i) => {
-                      const doubleClick= ()=>{
+                    const doubleClick = () => {
                         axiosFunc(`http://localhost${item.url}`)
                         MoveUp()
                     }

@@ -27,4 +27,16 @@
             color: #393939;
         }
     }
+    &__items{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item{
+        margin: 3px;
+    }
+    &__routingsNum {
+        display: flex;
+        justify-content: flex-end;
+        margin: 16px 0 64px;
+    }
 }

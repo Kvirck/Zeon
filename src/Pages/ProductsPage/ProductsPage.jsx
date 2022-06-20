@@ -45,6 +45,7 @@ const ProductsPage = () => {
                         <p className={style.productsPage__identification}>Артикул: <span>{post.colors[0].articul}</span></p>
                         <div className={style.productsPage__color}>
                             <p >Цвет: </p>
+                            
                             {post.colors_name.map((color, i) =>
                                 <div key={color[0] + i}>
                                     <div style={{ backgroundColor: color }}

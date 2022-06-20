@@ -44,18 +44,18 @@ function App() {
       <Header onChange={handlerValue} />
       <MiniHedaer />
       <Routes>
-        <Route path='/SearchPage' element={<SearchPage value={value} />} />
+        {/* <Route path='/SearchPage' element={<SearchPage value={value} />} />
         <Route path='/' element={<HomePage />} />
         <Route path='/NewsPage' element={<NewsPage />} />
         <Route path='/AboutAs' element={<AboutAs />} />
         <Route path='/Basket' element={<Basket />} />
         <Route path='/Help' element={<Help />} />
-        <Route path='/Collections' element={<Collections />} />
+        <Route path='/Collections' element={<Collections />} /> */}
         <Route path='/ProductsPage/:id' element={<ProductsPage />} />
-        <Route path='/Section' element={<Section />} />
+        {/* <Route path='/Section' element={<Section />} />
         <Route path='/Collections/:id' element={<CollectionsPage />} />
         <Route path='/Favorites' element={<Favorites />} />
-        <Route path='/PublicOffer' element={<PublicOffer />} />
+        <Route path='/PublicOffer' element={<PublicOffer />} /> */}
 
       </Routes>
       <Footer />

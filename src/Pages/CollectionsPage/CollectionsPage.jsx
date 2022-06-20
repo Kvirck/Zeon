@@ -44,7 +44,7 @@ const CollectionsPage = () => {
                         links={collectionsPage.toJS_getCollPage_Links} axiosFunc={(url) => collectionsPage.getCollectionsPageNew(url)} />
                 </div>
                 <p className={style.new}>Новинки</p>
-                <SimilarProduct/>
+                <SimilarProduct />
             </div>
             <ScrollTop />
         </div >
