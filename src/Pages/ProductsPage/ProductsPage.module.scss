@@ -194,25 +194,7 @@
         display: flex;
     }
 
-    &__addToBasket {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 13px 135px 13px 125px;
-        margin-right: 8px;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 17px;
-        color: #FFFFFF;
-        background: #1D1D1B;
-        border: none;
-
-        p {
-            margin-left: 12px;
-            white-space: nowrap;
-        }
-    }
+  
 
     &__addToFavorites {
         padding: 10px 10px;
@@ -304,15 +286,7 @@
             display: block;
         }
 
-        &__addToBasket {
-            padding: 0 34px 0 22px;
 
-            p {
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 17px;
-            }
-        }
     }
 }
 

@@ -1,4 +1,3 @@
-import SimilarProduct from '../../Components/SecondaryFunc/SimilarProduct/SimilarProduct'
 import search from '../../DataBase/search'
 import style from './SearchPage.module.scss'
 import { useEffect } from 'react';
@@ -6,6 +5,7 @@ import Card from '../HomePage/Cards/Card/CardV1/Card';
 import { Link } from 'react-router-dom';
 import RoutingsNum from '../../Components/SecondaryFunc/RoutingsNumV2/RoutingsNum';
 import { useState } from 'react';
+import { observer } from 'mobx-react-lite';
 
 const SearchPage = ({ value }) => {
     const [isLoading, setLoading] = useState(true)
@@ -64,4 +64,4 @@ const SearchPage = ({ value }) => {
     )
 }
 
-export default SearchPage
+export default observer(SearchPage)
