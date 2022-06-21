@@ -112,13 +112,25 @@
             margin-right: 6px;
         }
 
-        &__colorBrown {
+        &__notActive {
             margin-right: 10px;
+            padding: 4px;
+            border-width: 1px;
+        }
+
+        &__active {
+            border: solid #73A39D;
+            border-width: 1px;
+        }
+
+        &__colorBrown {
             width: 8px;
             height: 8px;
             opacity: 0.47;
             border-radius: 4px;
+            cursor: pointer;
         }
+
     }
 
     &__price {
@@ -194,7 +206,7 @@
         display: flex;
     }
 
-  
+
 
     &__addToFavorites {
         padding: 10px 10px;

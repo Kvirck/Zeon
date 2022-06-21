@@ -1,5 +1,5 @@
 import { makeAutoObservable, toJS } from "mobx";
-class Basket {
+export default class Basket {
     products = []
     constructor() {
         makeAutoObservable(this)
@@ -32,5 +32,8 @@ class Basket {
         this.products = this.products.filter((item) => item.id !== post.id)
         this.setLocalStorageBasket()
     }
+    get toJS_products(){
+        return toJS(this.products)  
+    }
+    
 }
-export default new Basket()

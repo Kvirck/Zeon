@@ -1,21 +1,24 @@
 import style from "./Basket.module.scss"
 import BasketProduct from "./BasketProduct"
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import ModalProduct from './../../Components/SecondaryFunc/ModalWindow/ModalProduct/ModalProduct';
-
+import { Context } from './../../index';
+import { observer } from 'mobx-react-lite';
 const Basket = (props) => {
+    const { Basket } = useContext(Context)
+    console.log(Basket.toJS_products);
 
     const [modalActive, setModalActive] = useState(false)
     return (
         <div className='container'>
             <div className={style.basket}>
                 <div>
-                    <div className={style.basket__item}>
-                        <BasketProduct productName="Вечернее платье" sizeProduct="42-50" priceOld="1 765 р" priceNew="1 365 р" />
-                    </div>
-                    <div className={style.basket__item}>
-                        <BasketProduct productName="Платье" sizeProduct="42-50" priceOld="1 365 р" priceNew="1 065 р" />
-                    </div>
+                    {Basket.toJS_products.map(product => (
+                        <div key={product.id} className={style.basket__item}>
+                            <BasketProduct product={product} />
+                        </div>
+                    ))}
+
                 </div>
                 <div>
                     <div className={style.basket__buy}>
@@ -36,4 +39,4 @@ const Basket = (props) => {
         </div>
     )
 }
-export default Basket
+export default observer(Basket)

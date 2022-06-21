@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import basket from './DataBase/basket';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-basket.main()
+const Basket = new basket()
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
+Basket.main()
+export const Context = createContext({ Basket })
 root.render(
   <BrowserRouter>
-    <App />
+    <Context.Provider value={{ Basket }}>
+      <App />
+    </Context.Provider>
   </BrowserRouter>
 );
 
