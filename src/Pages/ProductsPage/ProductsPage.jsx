@@ -31,6 +31,7 @@ const ProductsPage = () => {
                 setColor(data.data.colors[0])
             })
     }, [id])
+    console.log(color);
     return (
         <div className="container">
             {color ? (

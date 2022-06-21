@@ -9,7 +9,6 @@ const AddBasket = ({ post, indexColor }) => {
     const { Basket } = useContext(Context)
     const {id} = useParams();//this product id
     const [show, setShow] = useState(Basket.toJS_products.find((prod) => prod.color.id === post.id))
-    console.log('basket products', Basket.toJS_products)
 
     const handleAddBasket = (prod, productId = id) => {
         let product = {id: productId, color: prod};
