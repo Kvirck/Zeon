@@ -15,6 +15,7 @@ const Basket = (props) => {
                 <div>
                     {Basket.toJS_products.map(product => (
                         <div key={product.id} className={style.basket__item}>
+                            {console.log(product)}
                             <BasketProduct product={product} />
                         </div>
                     ))}

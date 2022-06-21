@@ -46,11 +46,20 @@
         }
 
         &__color {
+            display: flex;
+            align-items: center;
             font-style: normal;
             font-weight: 400;
             font-size: 13px;
             line-height: 16px;
             color: #7C7C7C;
+            &__colorBrown {
+                margin-left: 8px;
+                width: 8px;
+                height: 8px;
+                opacity: 0.47;
+                border-radius: 4px;
+            }
         }
 
         &__price {
