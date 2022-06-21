@@ -1,5 +1,6 @@
 import { makeAutoObservable, toJS } from "mobx";
 class Basket {
+    products = []
     constructor() {
         makeAutoObservable(this)
     }
@@ -15,17 +16,20 @@ class Basket {
             return []
         }
     }
-
+    examinationBasket(post) {
+        this.products = this.products.filter((prod) => prod.id === post.id)
+        this.setLocalStorageBasket()
+    }
     setLocalStorageBasket() {
         localStorage.setItem('basket', JSON.stringify(this.products))
     }
 
-    addBasket(product) {
-        this.products = [...this.products, product]
+    addBasket(post) {
+        this.products = [...this.products, post]
         this.setLocalStorageBasket()
     }
-    delBasket(product) {
-        this.products = this.products.filter((item) => item.id !== product.id)
+    delBasket(post) {
+        this.products = this.products.filter((item) => item.id !== post.id)
         this.setLocalStorageBasket()
     }
 }
