@@ -4,7 +4,7 @@ import dataLinks from "../../DataBase/dataLinks";
 import { observer } from 'mobx-react-lite';
 import { useNavigate } from "react-router-dom";
 
-const Header = ({onChange}) => {
+const Header = ({ onChange, value }) => {
 
   const fav = localStorage.getItem('favorites')
   let favFact
@@ -25,7 +25,7 @@ const Header = ({onChange}) => {
 
 
   const navigate = useNavigate();
-  const searchGo = () => navigate('/SearchPage')
+  const searchGo = () => navigate(`/SearchPage/${value}`)
 
   const handlerValue = (event) => {
     onChange(event.target.value)
@@ -66,9 +66,13 @@ const Header = ({onChange}) => {
                 placeholder="Поиск"
                 onChange={handlerValue}
                 onKeyPress={e => {
-                  if (e.key === 'Enter') {
+                  if (e.key === 'Enter' && value === '') {
+                    e.preventDefault()
+                  }
+                  if (e.key === 'Enter' && value !== '') {
                     searchGo()
                   } else;
+
                 }}
               />
             </form>

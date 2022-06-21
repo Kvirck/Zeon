@@ -14,7 +14,6 @@ const ProductsPage = () => {
     let imgLinks = []
     let imgNubers = 0
     let imgS
-    // console.log(e)
     useEffect(() => {
         fetch(`http://localhost:80/products/${id}`)
             .then(res => res.json())

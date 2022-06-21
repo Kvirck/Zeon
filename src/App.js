@@ -41,10 +41,10 @@ function App() {
 
   return (
     <div>
-      <Header onChange={handlerValue} />
+      <Header value={value} onChange={handlerValue} />
       <MiniHedaer />
       <Routes>
-        <Route path='/SearchPage' element={<SearchPage value={value} />} />
+        <Route path='/SearchPage/:name' element={<SearchPage value={value} />} />
         <Route path='/' element={<HomePage />} />
         <Route path='/NewsPage' element={<NewsPage />} />
         <Route path='/AboutAs' element={<AboutAs />} />
