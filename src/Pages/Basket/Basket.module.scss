@@ -2,6 +2,7 @@
     display: flex;
     margin-top: 12px;
     margin-bottom: 96px;
+
     &__item {
         margin-bottom: 6px;
     }
@@ -49,7 +50,8 @@
             width: 100%;
             background-color: #000000;
             background-color: #3A343403;
-            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23BFBFBFFF' stroke-width='5' stroke-dasharray='6%2c 14' stroke-dashoffset='80' stroke-linecap='square'/%3e%3c/svg%3e");        }
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23BFBFBFFF' stroke-width='5' stroke-dasharray='6%2c 14' stroke-dashoffset='80' stroke-linecap='square'/%3e%3c/svg%3e");
+        }
 
         &__btn {
             white-space: nowrap;
@@ -65,6 +67,34 @@
             background: #E5271B;
             border: none;
             outline: none;
+        }
+    }
+
+    &__result {
+        &__title {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 29px;
+            color: #393939;
+        }
+
+        &__text {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            color: #393939;
+            margin: 16px 0 48px;
+        }
+
+        &__similarProduct {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 29px;
+            color: #393939;
+            margin-bottom: 16px;
         }
     }
 

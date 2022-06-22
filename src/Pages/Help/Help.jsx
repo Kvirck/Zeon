@@ -11,8 +11,6 @@ const Help = () => {
         }
         setShowBtn(i)
     }
-
-    console.log(`asdas`, dataLinks.toJS_help);
     return (
         <div className="container">
             <div className={style.help}>

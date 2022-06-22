@@ -1,33 +1,15 @@
-import FavoritesIcon from "../../../../../Components/SecondaryFunc/FavoritesIcon/FavoritesIcon"
 import style from "./Card.module.scss"
+import FavoritesIconV2 from './../../../../../Components/SecondaryFunc/FavoritesIconV2/FavoritesIconV2';
 
 
 const Card = ({ data }) => {
-    const store = JSON.parse(localStorage.getItem('favorites'))
 
-    if (!store) {
-        localStorage.setItem('favorites', JSON.stringify([]))
-    } else {
-    }
-
-    let isFavorite
-
-    if (store) {
-        if (store.find((itemId) => itemId === data.id)) {
-            isFavorite = true
-        } else {
-            isFavorite = false
-        }
-    } else {
-        isFavorite = false
-    }
-    
     return (
         <>
             <div className={style.card}>
                 <div className={style.card__img}>
                     <img src={`http://localhost${data.images[0]}`} alt="img" />
-                    <FavoritesIcon id={data.id} isInFavorite={isFavorite} />
+                    <FavoritesIconV2 data={data} />
                     {data.colors[0].discount ? <div className={style.card__img__sale}>
                         <span>{data.colors[0].discount + '%'}</span>
                     </div> : null}

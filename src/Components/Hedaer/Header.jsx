@@ -3,26 +3,14 @@ import { Link, } from 'react-router-dom';
 import dataLinks from "../../DataBase/dataLinks";
 import { observer } from 'mobx-react-lite';
 import { useNavigate } from "react-router-dom";
+import { Context } from './../../index';
+import { useContext } from 'react';
 
 const Header = ({ onChange, value }) => {
+  const { Basket, Favorites } = useContext(Context)
 
-  const fav = localStorage.getItem('favorites')
-  let favFact
-  const favFucn = () => {
-    if (fav.length === 2) {
-      return favFact = false
-    }
-    if (fav.length !== 2) {
-      return favFact = true
-    }
-  }
-  favFucn()
+
   const data = dataLinks.toJS_links
-
-
-
-
-
 
   const navigate = useNavigate();
   const searchGo = () => navigate(`/SearchPage/${value}`)
@@ -80,13 +68,14 @@ const Header = ({ onChange, value }) => {
               <div className={style.bottom__favorites}>
                 <div className={style.bottom__favorites__icon}>
                   <img src="/img/heart-icon.svg" alt="heart-icon" />
-                  <div className={favFact ? `${style.bottom__favorites__red} ${style.bottom__favorites__active}` : style.bottom__favorites__red}></div>
+                  <div className={Favorites.products.length === 0 ? '' : style.bottom__favorites__red}></div>
                 </div>
                 <span>Избранное</span>
               </div>
             </Link>
             <Link to='/Basket'>
               <div className={style.bottom__basket}>
+                <div className={Basket.products.length === 0 ? '' : style.bottom__basket__active}></div>
                 <img src="/img/basket-icon.svg" alt="basket-icon" />
                 <span>Корзина</span>
               </div>

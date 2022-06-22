@@ -16,13 +16,11 @@ const ProductsPage = () => {
     let imgLinks = []
     let imgNubers = 0
     let imgS
-
     const handleColorIndex = (id) => {
         let i = post.colors.findIndex((color) => color.id === id)
         setIndex(i);
-        setColor(post.colors[index]);
+        setColor(post.colors[i]);
     }
-
     useEffect(() => {
         fetch(`http://localhost:80/products/${id}`)
             .then(res => res.json())
@@ -31,7 +29,6 @@ const ProductsPage = () => {
                 setColor(data.data.colors[0])
             })
     }, [id])
-    console.log(color);
     return (
         <div className="container">
             {color ? (

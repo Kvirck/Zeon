@@ -10,12 +10,13 @@ import { observer } from 'mobx-react-lite';
 import cardsBesteller from "../../DataBase/cardsBesteller";
 import novelties from "../../DataBase/novelties";
 import CardsNovelties from "./Cards/Novelties/CardsNovelties";
+import BreadCrumbs from "../../Components/BreadCrumbs/BreadCrumbs";
 
 const HomePage = () => {
     return (
         <div className={style.homePage}>
-
             <div className="container">
+            <BreadCrumbs />
                 <div className={style.slider}>
                     <Slider />
                 </div>
@@ -27,7 +28,7 @@ const HomePage = () => {
                     <CardsNovelties data={novelties.toJS_novelties} />
                     {novelties.get_Stop ? <Buttun onClick={() => novelties.getNovelties()} /> : ''}
                     <h2>Коллекция</h2>
-                    <CardsCollection  data={collections.get_Collections} />
+                    <CardsCollection data={collections.get_Collections} />
                     {collections.get_Stop ? <Buttun onClick={() => collections.getCollections()} /> : ''}
                 </div>
                 <ScrollTop />

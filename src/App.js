@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 
 import './App.scss';
@@ -38,7 +38,6 @@ function App() {
     novelties.getNovelties()
     dataLinks.getDataLinks()
   }, [])
-
   return (
     <div>
       <Header value={value} onChange={handlerValue} />

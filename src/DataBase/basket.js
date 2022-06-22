@@ -7,7 +7,10 @@ export default class Basket {
     main() {
         this.products = this.parseLocalStorageBasket()
     }
-
+    addBasketCount = (data) => {
+        data.basketCount = 1
+        return JSON.parse(JSON.stringify(data))
+    }
     parseLocalStorageBasket() {
         let basket = JSON.parse(localStorage.getItem('basket'))
         if (basket) {
@@ -29,11 +32,58 @@ export default class Basket {
         this.setLocalStorageBasket()
     }
     delBasket(post) {
-        this.products = this.products.filter((item) => item.id !== post.id)
+        this.products = this.products.filter((item) => item.color.id !== post.color.id)
         this.setLocalStorageBasket()
     }
-    get toJS_products(){
-        return toJS(this.products)  
+    addingCount(prod) {
+        const exemple = this.products.find((e) => e.color.id === prod.color.id)
+        exemple.basketCount += 1
+        this.setLocalStorageBasket()
     }
-    
+    dellCount(prod) {
+        const exemple = this.products.find((e) => e.color.id === prod.color.id)
+        if (exemple.basketCount - 1 === 0) {
+            return
+        } else {
+            exemple.basketCount -= 1
+            this.setLocalStorageBasket()
+        }
+
+    }
+    get numberOfLines() {
+        let sum = 0
+        for (let item of this.products) {
+            sum += 1 * item.basketCount
+        }
+        return sum
+    }
+    get numberOfGoods() {
+        return this.numberOfLines * 5
+    }
+    get price() {
+        let sum = 0
+        for (let item of this.products) {
+            sum += item.color.price * item.basketCount
+        }
+        return sum
+    }
+    get sale() {
+        let sum = 0
+        this.products.forEach(count => {
+            if (count.color.current_price) {
+                return sum += Math.floor(count.color.price / 100 * count.color.discount) * count.basketCount
+            } else return sum
+        })
+        return sum
+    }
+
+    get totalPayable() {
+        let sum = this.price - this.sale
+        return sum
+    }
+    get toJS_products() {
+        return toJS(this.products)
+    }
+
+
 }

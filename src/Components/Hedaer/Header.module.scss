@@ -146,13 +146,7 @@ ul {}
         background: #E5271B;
         width: 10px;
         height: 10px;
-        transform: scale(0);
       }
-
-      &__active {
-        transform: scale(1);
-      }
-
       span {
         font-style: normal;
         font-weight: 500;
@@ -166,9 +160,16 @@ ul {}
       display: flex;
       align-items: center;
       margin-left: 20px;
-
-
-
+      position: relative;
+      &__active{
+        position: absolute;
+        background: #E5271B;
+        left: 15px;
+        top: 0;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        }
       span {
         font-style: normal;
         font-weight: 500;
@@ -181,5 +182,7 @@ ul {}
         margin-right: 10px;
       }
     }
+
+  
   }
 }

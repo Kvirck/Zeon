@@ -4,15 +4,14 @@ const Loader = () => {
     return (
         <div className='container'>
             <div className='loaders'>
-            <p className="nameLoader">Загрузка подождите </p >
-                <div id="loader">
-                    <div class="ls-particles ls-part-1"></div>
-                    <div class="ls-particles ls-part-2"></div>
-                    <div class="ls-particles ls-part-3"></div>
-                    <div class="ls-particles ls-part-4"></div>
-                    <div class="ls-particles ls-part-5"></div>
-                    <div class="lightsaber ls-left ls-green"></div>
-                    <div class="lightsaber ls-right ls-red"></div>
+                <div id="load">
+                    <div>G</div>
+                    <div>N</div>
+                    <div>I</div>
+                    <div>D</div>
+                    <div>A</div>
+                    <div>O</div>
+                    <div>L</div>
                 </div>
             </div>
 

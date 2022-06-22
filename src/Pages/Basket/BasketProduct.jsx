@@ -5,7 +5,7 @@ import { useContext } from 'react';
 const BasketProduct = ({ product }) => {
     const { Basket } = useContext(Context)
 
-    console.log(`product ${product}`);
+
     return (
         <div className={style.basket__product}>
             <div className={style.basket__product__img}>
@@ -32,18 +32,24 @@ const BasketProduct = ({ product }) => {
                 <div className={style.basket__product__price}>
                     <p className={style.basket__product__priceNew}>
                         {product.color.current_price} {product.color.current_price ? ' р ' : ''}
-                        <span className={product.current_price ? style.basket__product__priceOld : style.basket__product__priceNew}>
+                        <span className={product.color.current_price ? style.basket__product__priceOld : style.basket__product__priceNew}>
                             {product.color.price} р</span>
                     </p>
                 </div>
                 <div className={style.basket__product__btn}>
-                    <button className={style.basket__product__btn__item}>
-                        <svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 1.97599V0.987993V0H6.90569H0.000768052C0 1 3.33357e-05 0.439108 3.33357e-05 0.987993C3.33357e-05 1.53688 0.000958221 1.5 0.000768052 1.97599H4.86796H12Z" fill="#979797" />
+                    {product.basketCount === 0 ? <button className={style.basket__product__btn__item} onClick={() =>Basket.dellCount(product)} >
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 6.97599V5.98799V5H6.90569H0.000768052C0 6 3.33357e-05 5.43911 3.33357e-05 5.98799C3.33357e-05 6.53688 0.000958221 6.5 0.000768052 6.97599H4.86796H12Z" fill="#979797" />
                         </svg>
-                    </button>
-                    <div className={style.basket__product__btn__item}>1</div>
-                    <button className={style.basket__product__btn__item}>
+                    </button> :
+                        <button className={style.basket__product__btn__item} onClick={() =>Basket.dellCount(product)} >
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 6.97599V5.98799V5H6.90569H0.000768052C0 6 3.33357e-05 5.43911 3.33357e-05 5.98799C3.33357e-05 6.53688 0.000958221 6.5 0.000768052 6.97599H4.86796H12Z" fill="#393939" />
+                            </svg>
+                        </button>}
+                    <div className={style.basket__product__btn__item}>
+                        {product.basketCount}</div>
+                    <button className={style.basket__product__btn__item} onClick={() => { Basket.addingCount(product) }} >
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.0009 6.11326C12.0009 6.6793 12.0009 6.50005 12.0009 7.13213H6.90656V12C6 12 6.45373 12 5.8877 12C5.32166 12 5.5 12 4.86883 12V7.13213L0 7.13214C0.000614911 6.5 0.000903845 6.6793 0.000903845 6.11326C0.000903845 5.54722 0 5.5 0 5.0944L4.86883 5.09439V0C5.5009 3.91849e-05 5.32166 4.99189e-05 5.8877 4.99189e-05C6.45373 4.99189e-05 6.5009 0 6.90656 0V5.09439H12.0009C12.0009 6.00005 12.0009 5.54722 12.0009 6.11326Z" fill="#1A1E3D" />
                         </svg>
