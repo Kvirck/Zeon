@@ -10,7 +10,6 @@ import { Pagination } from "swiper";
 
 const CardsBestsellers = ({ data = [] }) => {
 
-    console.log(data)
     return <div>
 
         <div className={style.mini}>

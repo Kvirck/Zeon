@@ -16,7 +16,6 @@ const HomePage = () => {
     return (
         <div className={style.homePage}>
             <div className="container">
-            <BreadCrumbs />
                 <div className={style.slider}>
                     <Slider />
                 </div>

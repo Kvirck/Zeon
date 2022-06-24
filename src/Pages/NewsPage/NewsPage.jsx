@@ -2,17 +2,26 @@ import dataLinks from "../../DataBase/dataLinks"
 import News from "./News/News"
 import style from "./NewsPage.module.scss"
 import { observer } from 'mobx-react-lite';
+import { useState } from 'react';
 
 const NewsPage = () => {
     const data = dataLinks.toJS_news
+    const [showBtn, setShowBtn] = useState(null)
+    const toggle = i => {
+        if (showBtn === i) {
+            return setShowBtn(null)
+        }
+        setShowBtn(i)
+    }
     return (
         <div className="container">
             <div className={style.newsPage}>
                 <p className={style.newsPage__title}>Новости </p>
                 <div className={style.newsPage__content}>
-                    {data && data.map(news =>
+                    {data && data.map((news, i) =>
                         <div key={news?.id} className={style.content__item}>
-                            <News dataNews={news} />
+                            <News showBtn={showBtn} i={i}
+                                toggle={toggle} dataNews={news} />
                         </div>
                     )}
 

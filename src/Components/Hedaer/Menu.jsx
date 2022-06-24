@@ -34,10 +34,13 @@ const Menu = ({ active, setActive }) => {
                     </li>
                     <li className='inner'></li>
                     <li className='menu__item'>
-                        <div className='menu__item__svg' onClick={() => setActive(false)}>
-                            <img src="/img/heart-icon.svg" alt="heart-icon" />
-                            <p>Избранное</p>
-                        </div>
+                        <Link to='/Favorites'>
+                            <div className='menu__item__svg' onClick={() => setActive(false)}>
+                                <img src="/img/heart-icon.svg" alt="heart-icon" />
+                                <p>Избранное</p>
+                            </div>
+                        </Link>
+
                     </li>
                     <li className='menu__item'>
                         <Link to='/Basket'>

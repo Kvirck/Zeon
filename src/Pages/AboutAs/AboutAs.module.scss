@@ -43,6 +43,14 @@
         justify-content: center;
     }
 
+    @media screen and (max-width: 320px) {
+        &__img2 {
+            img {
+                margin: 0 !important;
+            }
+        }
+    }
+
     &__item {
         display: flex;
         align-items: center;

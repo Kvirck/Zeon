@@ -33,6 +33,10 @@
         color: #5B5B5B;
         max-height: 100px
     }
+
+    &__btn {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -75,6 +79,28 @@
             overflow: hidden;
             /* Обрезаем всё за пределами блока */
         }
+        &__descriprion__active{
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 165%;
+            margin: 0;
+            max-height: auto
 
+        }
+        &__btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 16px;
+            color: #1D1D1B;
+            width: 264px;
+            border: 1px solid #E7E7E7;
+            background: #FFFFFF;
+            padding: 10px 0;
+        }
     }
 }
