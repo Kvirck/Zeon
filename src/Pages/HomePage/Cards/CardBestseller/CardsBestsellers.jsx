@@ -10,6 +10,7 @@ import { Pagination } from "swiper";
 
 const CardsBestsellers = ({ data = [] }) => {
 
+    console.log(data)
     return <div>
 
         <div className={style.mini}>
@@ -21,14 +22,12 @@ const CardsBestsellers = ({ data = [] }) => {
                     modules={[Pagination]}
                     className="mySwiper"
                 >
-                    {data.map(e =>
-                        <div key={e.id} className={style.card}>
-                            <SwiperSlide>
-                                <Link onClick={() => MoveUp()} to={`/ProductsPage/${e.id}`}>
-                                    <Card data={e} />
-                                </Link>
-                            </SwiperSlide>
-                        </div>
+                    {data.map((e, i) =>
+                        <SwiperSlide key={e.id}>
+                            <Link onClick={() => MoveUp()} to={`/ProductsPage/${e.id}`}>
+                                <Card data={e} />
+                            </Link>
+                        </SwiperSlide>
                     )}
                 </Swiper>
             </div >
@@ -38,7 +37,7 @@ const CardsBestsellers = ({ data = [] }) => {
                 {data.map((e, i) =>
                     <div key={e.id + e.name} className={style.card}>
                         <Link onClick={() => MoveUp()} to={`/ProductsPage/${e.id}`}>
-                        
+
                             <Card data={e} />
                         </Link>
                     </div>

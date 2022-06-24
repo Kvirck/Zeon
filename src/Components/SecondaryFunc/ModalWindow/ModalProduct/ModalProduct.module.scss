@@ -9,9 +9,19 @@
     justify-content: center;
     align-items: center;
 
+    input {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        color: #1D1D1B;
+        outline:none;
+    }
+
     &__content {
         padding: 32px 24px;
         background: #FFFFFF;
+        display: block;
 
         &__title {
             display: flex;
@@ -31,18 +41,44 @@
                 cursor: pointer;
             }
         }
-        &__input {
 
-            input {
-                width: 392px;
-                padding: 13px;
+        &__number {
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            &__flags {
+                display: flex;
+                align-items: center;
+                margin-top: 4px;
                 margin-bottom: 12px;
-                font-style: normal;
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 17px;
-                color: #D0D0D0;
+                border: 1px solid #E7E7E7;
+                input {
+                    margin: 0;
+                    border: none !important;
+                    width: 300px;
+                }
             }
+        }
+
+        &__input {
+            border: 1px solid #E7E7E7;
+            margin-top: 4px;
+            display: block;
+            width: 392px;
+            padding: 13px;
+            margin-bottom: 12px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            color: #D0D0D0;
+
+        }
+
+        &__active {
+            border: 1px solid #E5271B;
+
         }
 
         &__text {
@@ -51,26 +87,37 @@
             font-size: 13px;
             line-height: 16px;
             color: #808080;
-            margin-bottom: 4px;
+        }
 
+        &__text__error {
+            color: #E5271B;
         }
 
         &__checkbox {
             display: flex;
-            margin: 18px 0 35px;
+            justify-content: left;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 18px;
+            color: #393939;
+            margin: 18px 0 34px;
 
-            p {
-                margin-left: 11px;
-                font-style: normal;
-                font-weight: 500;
-                font-size: 15px;
-                line-height: 18px;
-                color: #393939;
-                span{
-                    cursor: pointer;
-                    color: blue;
-                }
+            input {
+                width: auto;
             }
+
+            span {
+                color: aqua;
+            }
+        }
+
+        &__checkActive {
+            label {
+                color: #E5271B;
+                ;
+            }
+
         }
 
         &__btn {
@@ -87,6 +134,10 @@
             border: none;
             padding: 14px;
             width: 100%
+        }
+
+        &__btnActive {
+            background: #1D1D1B;
         }
     }
 

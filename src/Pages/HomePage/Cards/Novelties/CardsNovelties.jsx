@@ -19,13 +19,11 @@ const CardsNovelties = ({ data = []}) => {
                     className="mySwiper"
                 >
                     {data.map(e =>
-                        <div key={e.id} className={style.card}>
-                            <SwiperSlide>
+                            <SwiperSlide key={e.id} >
                                 <Link onClick={() => MoveUp()} to={`/ProductsPage/${e.id}`}>
                                     <Card data={e} />
                                 </Link>
                             </SwiperSlide>
-                        </div>
                     )}
                 </Swiper>
             </div>

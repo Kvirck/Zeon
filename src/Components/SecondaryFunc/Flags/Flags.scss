@@ -1,0 +1,46 @@
+.flags-select {
+    &__control {
+        width: 92px !important;
+        height: 45px !important;
+        border-radius: 0 !important;
+        border: none !important;
+        border-right: none !important;
+        padding-left: 12px !important;
+        outline:none;
+    }
+}
+
+.flags-select__value-container {
+    font-family: 'Montserrat' !important;
+    margin-top: 4px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 17px !important;
+    padding: 0 !important;
+    color: #393939 !important;
+}
+
+.flags-select__indicator {
+    width: 5px !important;
+    padding: 0;
+}
+
+.flags-select__indicator-separator {
+    display: none;
+}
+.flags-options{
+    display: flex;
+    img{
+        margin-right: 6px;
+        width: 20px;
+    }
+}
+.flags-select__indicators{
+    background-image: url(./../../../../public/img/Flags/down-arrow_icon-icons.com_73274.png);
+    background-repeat: no-repeat;
+    background-size: 8px;
+    background-position: center;
+    padding: 0;
+    width: 10px;
+}

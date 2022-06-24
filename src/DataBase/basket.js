@@ -35,6 +35,11 @@ export default class Basket {
         this.products = this.products.filter((item) => item.color.id !== post.color.id)
         this.setLocalStorageBasket()
     }
+    delBasketAll() {
+        this.products = localStorage.removeItem('basket')
+        this.products= this.parseLocalStorageBasket()
+        this.setLocalStorageBasket()
+    }
     addingCount(prod) {
         const exemple = this.products.find((e) => e.color.id === prod.color.id)
         exemple.basketCount += 1

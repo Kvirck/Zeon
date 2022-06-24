@@ -28,13 +28,11 @@ const SimilarProduct = () => {
                         className="mySwiper"
                     >
                         {!load ? collectionsPage.toJS_getProductsSimilar.data.map(item =>
-                            <div className={style.similarProduct__item} key={item.id}>
-                                <SwiperSlide>
-                                    <Link onClick={() => MoveUp()} to={`/ProductsPage/${item.colors[0].id}`}>
-                                        < Card data={item} />
-                                    </Link>
-                                </SwiperSlide>
-                            </div>
+                            <SwiperSlide key={item.id}>
+                                <Link onClick={() => MoveUp()} to={`/ProductsPage/${item.colors[0].id}`}>
+                                    < Card data={item} />
+                                </Link>
+                            </SwiperSlide>
                         ) : null}
                     </Swiper>
                 </div>

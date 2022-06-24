@@ -18,11 +18,11 @@ const CardsCollection = ({ data = [] }) => {
                     className="mySwiper"
                 >
                     {data.map(e =>
-                        <div key={e.id} className={style.cardsCollection__item}>
-                            <SwiperSlide>
+                        <SwiperSlide key={e.id}>
+                            <div className={style.cardsCollection__item}>
                                 <CardCollection id={e.id} data={e} />
-                            </SwiperSlide>
-                        </div>
+                            </div>
+                        </SwiperSlide>
 
                     )}
                 </Swiper>

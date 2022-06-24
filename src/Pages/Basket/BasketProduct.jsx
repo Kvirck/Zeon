@@ -21,14 +21,14 @@ const BasketProduct = ({ product }) => {
                     </button>
                 </div>
                 <p className={style.basket__product__size}>Размер: <span>{product.color.size}</span></p>
-                <p className={style.basket__product__color}>Цвет:
+                <div className={style.basket__product__color}>Цвет:
                     <div >
                         <div style={{ backgroundColor: product.color.color }}
                             className={style.basket__product__color__colorBrown}
                         >
                         </div>
                     </div>
-                </p>
+                </div>
                 <div className={style.basket__product__price}>
                     <p className={style.basket__product__priceNew}>
                         {product.color.current_price} {product.color.current_price ? ' р ' : ''}
