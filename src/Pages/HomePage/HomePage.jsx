@@ -4,13 +4,12 @@ import CardsCollection from "./Cards/CardsCollection/CardsCollection";
 import CardsBestsellers from './Cards/CardBestseller/CardsBestsellers';
 import Buttun from "./Button/Button";
 import Benefits from "./Benefits/Benefits";
-import ScrollTop from './../../Components/SecondaryFunc/ScrollTop/ScrollTop';
+import ScrollTop from './../../Components/SecondaryFunc/ScrollTopV2/ScrollTop';
 import collections from './../../DataBase/collections';
 import { observer } from 'mobx-react-lite';
 import cardsBesteller from "../../DataBase/cardsBesteller";
 import novelties from "../../DataBase/novelties";
 import CardsNovelties from "./Cards/Novelties/CardsNovelties";
-import BreadCrumbs from "../../Components/BreadCrumbs/BreadCrumbs";
 
 const HomePage = () => {
     return (

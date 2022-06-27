@@ -7,7 +7,7 @@
     .benefits {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        margin-left: 16px;
         margin-bottom: 196px;
     }
 
@@ -20,7 +20,7 @@
     background: #FFFFFF;
     width: 286px;
     height: 248px;
-
+    padding-bottom: 24px;
     &__content {
         text-align: center;
 

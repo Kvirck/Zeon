@@ -76,14 +76,14 @@ export default class Basket {
         let sum = 0
         this.products.forEach(count => {
             if (count.color.current_price) {
-                return sum += Math.floor(count.color.price / 100 * count.color.discount) * count.basketCount
+                return sum += count.color.price / 100 * count.color.discount * count.basketCount 
             } else return sum
         })
         return sum
     }
 
     get totalPayable() {
-        let sum = this.price - this.sale
+        let sum = Math.floor(this.price - this.sale)
         return sum
     }
     get toJS_products() {

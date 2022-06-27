@@ -1,0 +1,74 @@
+.breadCrumbs {
+    background: #fff;
+
+    &__inner {
+        width: 100%;
+        background: #FFFFFF;
+        padding: 2px 0;
+        box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.05);
+        margin: 0;
+    }
+
+    &__content {
+        display: flex;
+        padding: 22px 0;
+
+        &__nav {
+            &__item {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                color: #393939;
+                white-space: nowrap;
+                cursor: pointer;
+            }
+
+            p {
+                display: inline;
+            }
+
+            &__item:hover {
+                font-weight: 700;
+            }
+
+            &__slash {
+                margin: 0 16px;
+            }
+
+        }
+
+        &__nav:last-child {
+            p {
+                color: #979797;
+            }
+
+            p:hover {
+                font-weight: 500;
+            }
+
+            span {
+                display: none;
+            }
+        }
+
+
+    }
+}
+
+@media screen and (max-width:320px) {
+    .breadCrumbs {
+        &__content {
+            margin-left: 16px;
+            &__nav {
+                &__slash{
+                    margin: 0 12px;
+                }
+                &__item {
+                    font-size: 12px;
+                    line-height: 15px;
+                }
+            }
+        }
+    }
+}

@@ -1,8 +1,15 @@
 import style from "./AboutAs.module.scss"
+import BreadCrumbs from './../../Components/BreadCrumbs/BreadCrumbs';
 
 const AboutAs = () => {
     return (
         <div className={style.aboutAs} >
+            <div className={style.breadCrumbs}>
+            <BreadCrumbs pathname={[
+                { id: 1, page: 'Главная', path: '/' },
+                { id: 2,  page: 'О нас' }
+            ]} />
+            </div>
             <div className="container">
                 <div className={style.aboutAs__content}>
                     <div className={style.aboutAs__img}>

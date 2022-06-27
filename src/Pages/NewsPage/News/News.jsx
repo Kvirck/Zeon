@@ -1,4 +1,5 @@
 import style from "./News.module.scss"
+import { observer } from 'mobx-react-lite';
 
 const News = ({ dataNews = {}, toggle, i, showBtn }) => {
     return (
@@ -20,4 +21,4 @@ const News = ({ dataNews = {}, toggle, i, showBtn }) => {
         </div>
     )
 }
-export default News
+export default observer(News)

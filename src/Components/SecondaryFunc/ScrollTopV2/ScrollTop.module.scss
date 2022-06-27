@@ -1,0 +1,177 @@
+.scrollTop {
+    position: fixed;
+    bottom: 90px;
+    right: 200px;
+    z-index: 1;
+    text-align: end;
+    cursor: pointer;
+
+}
+
+@media screen and (max-width: 320px) {
+    .scrollTop {
+        display: none;
+    }
+}
+
+.message {
+    display: flex;
+}
+
+.arrow {
+    margin-bottom: 23px;
+}
+
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 20px;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        display: block;
+    }
+}
+
+.messageIcon {
+    height: 30px;
+    cursor: pointer;
+    transform: scale(0);
+    transition: 1s;
+}
+
+.messageIconActive {
+    transform: scale(1);
+    transition: 1s;
+}
+
+.xIcon {
+    position: absolute;
+    top: 50px;
+    cursor: pointer;
+    transform: scale(0);
+    transition: 1s;
+}
+
+.xIconActive {
+    top: 50px;
+    position: absolute;
+    transform: scale(1);
+    transition: 1s;
+}
+
+.socialNetwork {
+    position: relative;
+
+    &__item {
+        transform: scale(0);
+        position: absolute;
+    }
+
+    &__telegram {
+        position: absolute;
+        transform: scale(0);
+        transition: 1s;
+       
+    }
+
+    &__teleph {
+        position: absolute;
+        transition: 1s;
+        transform: scale(0);
+       
+    }
+
+    &__whats {
+        position: absolute;
+        transition: 1s;
+        transform: scale(0);
+    }
+
+    &__telegramActive {
+        position: absolute;
+        top: 38px;
+        left: -10px;
+        transition: 1s;
+        animation: telegram-jump;
+        animation-delay: 0.5s;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+    }
+
+    &__telephActive {
+        position: absolute;
+        top: 38px;
+        left: -10px;
+        transition: 1s;
+        animation: teleph-jump;
+        animation-duration: 0.5s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    &__whatsActive {
+        position: absolute;
+        top: 38px;
+        left: -10px;
+        transition: 1s;
+        animation: whats-jump;
+        animation-duration: 0.5s;
+        animation-delay: 1.5s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes telegram-jump {
+        0% {
+            transform: translate(0vw, 0vh) scale(0.3);
+        }
+
+        50% {
+            transform: translate(-5vw, -5vw) rotate(180deg) scale(0.7);
+        }
+
+        100% {
+            transform: translate(-160px, -0vh) rotate(360deg) scale(1);
+        }
+
+    }
+
+
+
+    @keyframes whats-jump {
+        0% {
+            transform: translate(0vw, 0vh) scale(0.3)
+        }
+
+        50% {
+            transform: translate(-5vw, -5vw) rotate(180deg) scale(0.7)
+        }
+
+        100% {
+            transform: translate(-108px, -0vh) rotate(360deg) scale(1);
+        }
+
+    }
+
+
+
+    @keyframes teleph-jump {
+        0% {
+            transform: translate(0vw, 0vh)scale(0.3);
+        }
+
+        50% {
+            transform: translate(-5vw, -5vw) rotate(180deg)scale(0.7);
+        }
+
+        100% {
+            transform: translate(-58px, -0vh) rotate(360deg)scale(1);
+        }
+
+    }
+
+
+}
+
+.socialNetwork__jump {}

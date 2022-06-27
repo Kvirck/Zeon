@@ -4,9 +4,18 @@
         position: absolute;
         right: 3%;
         top: 3%;
-        &__hover:hover{
-            path{
+
+        &__hover:hover {
+            path {
                 fill: white;
+            }
+        }
+
+        @media screen and(max-width:320px) {
+            &__hover {
+                path {
+                    fill: white;
+                }
             }
         }
     }

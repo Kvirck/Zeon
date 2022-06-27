@@ -204,6 +204,7 @@
 
     &__btn {
         display: flex;
+        height: 47px;
     }
 
 
@@ -211,6 +212,7 @@
     &__addToFavorites {
         padding: 10px 10px;
         background: #1D1D1B;
+        max-height: 47px;
         border: none;
         outline: none;
 
@@ -227,6 +229,7 @@
         margin-left: 16px;
 
         &__img {
+            display: none;
             img {
                 max-width: 262px;
             }
@@ -295,6 +298,25 @@
         }
 
 
+    }
+
+}
+
+.productsPage__img__mini {
+    max-width: 307px;
+}
+
+@media screen and (min-width:321px) {
+    .productsPage__img__mini {
+        display: none;
+    }
+}
+
+.productsPage__img__mini__item {
+    max-width: 280px;
+
+    img {
+        width: 100%;
     }
 }
 

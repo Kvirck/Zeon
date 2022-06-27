@@ -3,21 +3,30 @@ import style from "./AddBasket.module.scss"
 import { observer } from 'mobx-react-lite';
 import { Context } from './../../../index';
 import { Link, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const AddBasket = ({ post, indexColor }) => {
     const { Basket } = useContext(Context)
     const { id } = useParams();//this product id
-    const [show, setShow] = useState(Basket.toJS_products.find((prod) => prod.color.id === post.id))
+    const [show, setShow] = useState(Boolean(Basket.toJS_products.find((prod) => prod.color.id === post.id)))
 
     const handleAddBasket = (prod, productId = id) => {
         let product = { id: productId, color: prod };
         Basket.addBasket(Basket.addBasketCount(product));
-        setShow(Basket.toJS_products.find((prod) => prod.color.id === post.id))
+        setShow(Boolean(Basket.toJS_products.find((prod) => prod.color.id === post.id)))
     }
+
+    useEffect(() => {
+        console.log('before show', show)
+
+        setShow(Boolean(Basket.toJS_products.find((prod) => prod.color.id === post.id)))
+        console.log('after show', show)
+
+    }, [post])
 
     const [showBtn, setShowBtn] = useState(null)
     const toggle = i => {
-        if (showBtn === i) {
+        if (show) {
             return setShowBtn(null)
         }
         setShowBtn(i)
@@ -25,7 +34,7 @@ const AddBasket = ({ post, indexColor }) => {
     return (
         <div>
             {
-                show && showBtn === indexColor ?
+                show ?
                     <Link to='/Basket'>
                         <button className={style.productsPage__addToBasket}>
                             <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -3,12 +3,12 @@
 }
 .header {
   background-color: #fff;
-  padding: 10px 0px;
+  padding: 10px 25px 10px 17px ;
 
   &__content {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   .searchBox {

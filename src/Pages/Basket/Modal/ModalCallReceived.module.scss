@@ -1,0 +1,89 @@
+.modals {
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed; //чтобы всегда было по середине 
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.5s;
+
+    &__content {
+        padding: 29px 24px;
+        background-color: #FFFFFF;
+        text-align: center;
+    }
+
+    &__text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 100%;
+        color: #393939;
+        margin: 14px 0 8px;
+    }
+
+    &__description {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 150%;
+        color: #393939;
+        max-width: 311px;
+    }
+
+    &__btn {
+        margin: 16px 28px;
+        background: #1D1D1B;
+        padding: 14px 60px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+        white-space: nowrap;
+        /* Текст не переносится */
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .modals {
+        &__content {
+            padding: 25px 16px;
+        }
+
+        &__text {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 100%;
+        }
+
+        &__description {
+            text-align: center;
+            margin: 0 auto;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 150%;
+            max-width: 256px;
+        }
+
+        &__btn {
+            padding: 14px 64px;
+            margin: 15px 0 0 0;
+        }
+    }
+}
+
+.modals.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+}

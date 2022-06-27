@@ -62,7 +62,7 @@
 
     .rotate {
         svg {
-            transition: 3.5s;
-            transform: rotate(11340deg);
+            transition: 0.5s;
+            transform: rotateX(180deg);
         }
     }

@@ -82,7 +82,6 @@ const Header = ({ onChange, value }) => {
             </Link>
           </div>
         </div>
-        <div className={style.inner}></div>
       </div>
     </div>
   );

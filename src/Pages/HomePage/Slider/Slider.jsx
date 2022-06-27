@@ -28,13 +28,11 @@ const Slider = () => {
         className={style.mySwiper}>
 
         <SwiperSlide>
-
             <div className={style.bagImage}>
                 <img src="/img/contentImg.png" alt="" />
             </div>
         </SwiperSlide>
         <SwiperSlide>
-
             <div className={style.bagImage}>
                 <img src="/img/contentImg.png" alt="" />
             </div>

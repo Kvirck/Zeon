@@ -8,6 +8,7 @@ import { observer } from 'mobx-react-lite';
 import { useState } from 'react';
 import RoutingsNum from "../../Components/SecondaryFunc/RoutingsNumV2/RoutingsNum";
 import SimilarProduct from "../../Components/SecondaryFunc/SimilarProduct/SimilarProduct";
+import BreadCrumbs from "../../Components/BreadCrumbs/BreadCrumbs";
 
 const CollectionsPage = () => {
     const { id } = useParams()
@@ -23,31 +24,39 @@ const CollectionsPage = () => {
 
     }, [id])
     return (
-        < div className="container" >
-            <div className={style.collectionsPage}>
-                <p className={style.collectionsPage__title}>Коллекции {collectionsPage.toJS_getCollPage_products.name}</p>
-                <div className={style.collectionsPage__items}>
-                    {!isLoading ?
-                        collectionsPage.toJS_getCollPage_products.products.map(item =>
-                            <div key={item.id} className={style.collectionsPage__item}>
-                                <Link to={`/ProductsPage/${item.id}`}>
-                                    <Card data={item} />
-                                </Link>
-                            </div>
-                        )
-                        :
-                        null
-                    }
+        <>
+            <BreadCrumbs pathname={[
+                { id: 1, page: 'Главная', path: '/' },
+                { id: 2, page: 'Коллекции', path: '/Collections' },
+                { id: 3, page: `${collectionsPage.toJS_getCollPage_products.name}` }
+            ]} />
+            < div className="container" >
+                <div className={style.collectionsPage}>
+                    <p className={style.collectionsPage__title}>Коллекции {collectionsPage.toJS_getCollPage_products.name}</p>
+                    <div className={style.collectionsPage__items}>
+                        {!isLoading ?
+                            collectionsPage.toJS_getCollPage_products.products.map(item =>
+                                <div key={item.id} className={style.collectionsPage__item}>
+                                    <Link to={`/ProductsPage/${item.id}`}>
+                                        <Card data={item} />
+                                    </Link>
+                                </div>
+                            )
+                            :
+                            null
+                        }
+                    </div>
+                    <div className={style.collectionsPage__routingsNum}>
+                        <RoutingsNum currentPage={collectionsPage.toJS_getCollPage_currentPage}
+                            links={collectionsPage.toJS_getCollPage_Links} axiosFunc={(url) => collectionsPage.getCollectionsPageNew(url)} />
+                    </div>
+                    <p className={style.new}>Новинки</p>
+                    <SimilarProduct />
                 </div>
-                <div className={style.collectionsPage__routingsNum}>
-                    <RoutingsNum currentPage={collectionsPage.toJS_getCollPage_currentPage}
-                        links={collectionsPage.toJS_getCollPage_Links} axiosFunc={(url) => collectionsPage.getCollectionsPageNew(url)} />
-                </div>
-                <p className={style.new}>Новинки</p>
-                <SimilarProduct />
-            </div>
-            <ScrollTop />
-        </div >
+                <ScrollTop />
+            </div >
+        </>
+
     )
 }
 export default observer(CollectionsPage)

@@ -7,8 +7,11 @@
         background: #FFFFFF;
 
         &__img {
+            display: flex;
+            align-items: center;
             max-width: 112px;
-            img{
+
+            img {
                 width: 100%;
             }
         }
@@ -53,6 +56,7 @@
             font-size: 13px;
             line-height: 16px;
             color: #7C7C7C;
+
             &__colorBrown {
                 margin-left: 8px;
                 width: 8px;
@@ -113,6 +117,33 @@
             }
 
             &__item {}
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+ 
+    .basket__product {
+        width: 100%;
+        margin-left: 16px;
+
+        &__img{
+            max-width: 96px;
+        }
+        &__name {
+            font-size: 14px;
+            max-width: 120px;
+            line-height: 17px;
+            overflow: hidden;
+            text-overflow: ellipsis; /* Добавляем многоточие */
+            max-height: 20px;
+            margin-bottom: 8px;
+        }
+        &__size {
+            margin-bottom: 6px;
+        }
+        &__price{
+            margin-bottom: 52px;
         }
     }
 }
