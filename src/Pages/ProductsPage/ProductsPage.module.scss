@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
-
+    position: relative;
     &__img {
         max-width: 640px;
 
@@ -68,6 +68,8 @@
     }
 
     &__text {
+        position: sticky;
+        top: 50px;
         max-width: 480px;
         background: #FFFFFF;
         padding: 20px;

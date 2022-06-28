@@ -33,7 +33,7 @@ const BasketProduct = ({ product }) => {
                     <p className={style.basket__product__priceNew}>
                         {product.color.current_price} {product.color.current_price ? ' р ' : ''}
                         <span className={product.color.current_price ? style.basket__product__priceOld : style.basket__product__priceNew}>
-                            {product.color.price} р</span>
+                            {product.color.price.toLocaleString('ru-RU')} р</span>
                     </p>
                 </div>
                 <div className={style.basket__product__btn}>

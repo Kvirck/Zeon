@@ -20,7 +20,7 @@ const SearchPage = ({ value }) => {
         setISLoading(true)
         setTimeout(() => {
             setISLoading(false)
-        }, 1000)
+        }, 1500)
     }, [])
 
     useEffect(() => {

@@ -47,7 +47,7 @@ const ProductsPage = () => {
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
-        }, 1000)
+        }, 1500)
     }, [])
     return (
         <>
@@ -142,7 +142,7 @@ const ProductsPage = () => {
                             <div className={style.productsPage__price}>
                                 <p className={style.productsPage__priceNew}>
                                     {post.colors[0].current_price} {post.colors[0].current_price ? ' р ' : ''}
-                                    <span className={post.colors[0].current_price ? style.productsPage__priceOld : style.productsPage__priceNew}>{post.colors[0].price} р</span>
+                                    <span className={post.colors[0].current_price ? style.productsPage__priceOld : style.productsPage__priceNew}>{post.colors[0].price.toLocaleString('ru-RU')} р</span>
                                 </p>
                             </div>
                             <p className={style.productsPage__info}>О товаре:</p>
