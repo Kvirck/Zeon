@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "./Slider.scss";
 
 import style from "./Slider.module.scss";
 
@@ -38,7 +39,6 @@ const Slider = () => {
             </div>
         </SwiperSlide>
         <SwiperSlide>
-
             <div className={style.bagImage}>
                 <img src="/img/contentImg.png" alt="" />
             </div>

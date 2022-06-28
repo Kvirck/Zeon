@@ -1,6 +1,7 @@
 import { makeAutoObservable, toJS } from "mobx";
 export default class Basket {
     products = []
+    saleFine = 0
     constructor() {
         makeAutoObservable(this)
     }
@@ -37,7 +38,7 @@ export default class Basket {
     }
     delBasketAll() {
         this.products = localStorage.removeItem('basket')
-        this.products= this.parseLocalStorageBasket()
+        this.products = this.parseLocalStorageBasket()
         this.setLocalStorageBasket()
     }
     addingCount(prod) {
@@ -76,15 +77,17 @@ export default class Basket {
         let sum = 0
         this.products.forEach(count => {
             if (count.color.current_price) {
-                return sum += count.color.price / 100 * count.color.discount * count.basketCount 
+                console.log(count.color.price / 100 * count.color.discount * count.basketCount);
+                return sum += count.color.price / 100 * count.color.discount * count.basketCount
             } else return sum
         })
-        return sum
+        this.saleFine = sum
+        return Math.floor(sum)
     }
 
     get totalPayable() {
-        let sum = Math.floor(this.price - this.sale)
-        return sum
+        let sum = this.price - this.saleFine
+        return Math.floor(sum)
     }
     get toJS_products() {
         return toJS(this.products)

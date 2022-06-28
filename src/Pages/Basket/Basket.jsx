@@ -37,14 +37,14 @@ const Basket = (props) => {
                                     <div className={style.basket__buy}>
                                         <div className={!show ? style.basket__buy__none : ''}>
                                             <p className={style.basket__buy__title}>Сумма заказа</p>
-                                            <p className={`${style.basket__buy__item} ${style.basket__buy__notMini}`}>Количество линеек: <span>{Basket.numberOfLines} шт</span></p>
-                                            <p className={`${style.basket__buy__item} ${style.basket__buy__notMini}`}>Количество товаров: <span>{Basket.numberOfGoods} шт</span></p>
-                                            <p className={`${style.basket__buy__item} ${style.basket__buy__mini}`}>Общее количество: <span>{Basket.numberOfLines} линеек ({Basket.numberOfGoods} шт.) </span></p>
-                                            <p className={style.basket__buy__item}>Стоимость: <span>{Basket.price} рублей </span></p>
-                                            <p className={style.basket__buy__item}>Скидка: <span>{Basket.sale} рублей </span></p>
+                                            <p className={`${style.basket__buy__item} ${style.basket__buy__notMini}`}>Количество линеек: <span>{Basket.numberOfLines.toLocaleString('ru-RU')} шт</span></p>
+                                            <p className={`${style.basket__buy__item} ${style.basket__buy__notMini}`}>Количество товаров: <span>{Basket.numberOfGoods.toLocaleString('ru-RU')} шт</span></p>
+                                            <p className={`${style.basket__buy__item} ${style.basket__buy__mini}`}>Общее количество: <span>{Basket.numberOfLines.toLocaleString('ru-RU')} линеек ({Basket.numberOfGoods} шт.) </span></p>
+                                            <p className={style.basket__buy__item}>Стоимость: <span>{Basket.price.toLocaleString('ru-RU')} рублей </span></p>
+                                            <p className={style.basket__buy__item}>Скидка: <span>{Basket.sale.toLocaleString('ru-RU')} рублей </span></p>
                                             <div className={style.basket__buy__innert} ></div>
                                         </div>
-                                        <p className={style.basket__buy__item}>Итого к оплате: <span>{Basket.totalPayable} рублей</span></p>
+                                        <p className={style.basket__buy__item}>Итого к оплате: <span>{Basket.totalPayable.toLocaleString('ru-RU')} рублей</span></p>
                                         {show ? <button onClick={() => setShow(!show)} className={style.basket__buy__more}>Скрыть</button> :
                                             <button onClick={() => setShow(!show)} className={style.basket__buy__more}>Информация о заказе</button>}
                                         <button onClick={() => setModalActive(!modalActive)} className={style.basket__buy__btn}>Оформить заказ</button>

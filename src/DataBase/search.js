@@ -9,6 +9,7 @@ class search {
     links = []
     currentPage = 1
     url = ''
+    name = []
     async getSearch(url) {
         await axios.get(url)
             .then(res => {
@@ -30,6 +31,13 @@ class search {
             )
 
     }
+    async getSearchSelect(url) {
+        await axios.get(url)
+            .then(res => {
+                this.name = res.data
+            }
+            )
+    }
     get toJS__product() {
         return toJS(this.product)
     }
@@ -38,6 +46,9 @@ class search {
     }
     get toJS__currentPage() {
         return toJS(this.currentPage)
+    }
+    get toJS__name() {
+        return toJS(this.name)
     }
 }
 

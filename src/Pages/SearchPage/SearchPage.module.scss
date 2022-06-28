@@ -6,6 +6,9 @@
         line-height: 29px;
         color: #393939;
         margin: 11px 0 16px;
+        @media screen and (max-width: 320px) {
+            margin-left: 17px;
+        }
     }
 
     &__text {
@@ -14,6 +17,9 @@
         font-size: 16px;
         line-height: 20px;
         color: #393939;
+        @media screen and (max-width: 320px) {
+            margin-left: 17px;
+        }
     }
 
     &__random {
@@ -25,18 +31,34 @@
             font-size: 24px;
             line-height: 29px;
             color: #393939;
+            @media screen and (max-width: 320px) {
+                margin-left: 17px;
+            }
         }
     }
-    &__items{
+
+    &__items {
         display: flex;
         flex-wrap: wrap;
+        @media screen and (max-width: 320px) {
+            margin-left: 17px;
+        }
     }
-    &__item{
+
+    &__item {
         margin: 3px;
+        @media screen and (max-width: 320px) {
+            margin-left: 17px;
+        }
     }
+
     &__routingsNum {
         display: flex;
         justify-content: flex-end;
         margin: 16px 0 64px;
+        @media screen and (max-width: 320px) {
+            margin-left: 17px;
+        }
     }
 }
+

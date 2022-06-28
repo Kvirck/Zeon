@@ -12,7 +12,6 @@ import BreadCrumbs from "../../Components/BreadCrumbs/BreadCrumbs";
 
 const SearchPage = ({ value }) => {
     const { name } = useParams()
-    console.log();
     const [isLoading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -56,29 +55,6 @@ const SearchPage = ({ value }) => {
                                 } />
                         </div>
                     </div> : null}
-
-                {/* {
-                value ?
-                    <div className={style.search__true}>
-                        <p className={style.search__result}>Результаты поиска по запросу: <span>{value}</span></p>
-                        {value ? search.toJS__product.map(item =>
-                            <div key={item.id} className={style.favorites__item}>
-                                <Link to={`/ProductsPage/${item.id}`}>
-                                    <Card data={item} />
-                                </Link>
-                            </div>) : null}
-                    </div>
-                    :
-                    <div className={style.search__false}>
-                        <p className={style.search__result}>Результаты поиска по запросу: <span>{value}</span></p>
-                        <p className={style.search__text}>По Вашему запросу ничего не найдено.</p>
-                        <div className={style.search__random}>
-                            <p className={style.search__random__text}>Возможно Вас заинтересует</p>
-                            <SimilarProduct />
-                        </div>
-                    </div>
-            } */}
-
 
             </div>
         </>

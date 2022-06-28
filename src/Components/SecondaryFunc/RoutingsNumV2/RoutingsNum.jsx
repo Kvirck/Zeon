@@ -7,6 +7,8 @@ const RoutingsNum = ({ links, currentPage, axiosFunc = () => console.log('ok') }
             behavior: "smooth"
         }))
     }
+   
+
     let stop = true;
 
     return (
@@ -16,7 +18,7 @@ const RoutingsNum = ({ links, currentPage, axiosFunc = () => console.log('ok') }
                 {links.map((item, i) => {
                     if (links.length === 3) {
                         return ''
-                    } 
+                    }
                     if (i > 3 && i < links.length - 2) {
                         if (stop) {
                             stop = false;

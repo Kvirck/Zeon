@@ -1,18 +1,15 @@
-.miniHedaer{
+.miniHedaer {
   position: relative;
 }
+
 .header {
   background-color: #fff;
-  padding: 10px 25px 10px 17px ;
+  padding: 10px 25px 10px 17px;
 
   &__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-
-  .searchBox {
-    position: relative;
   }
 
 }
@@ -26,3 +23,18 @@
 .activeMenu {
   display: none;
 }
+
+.search__main {
+  position: relative;
+}
+
+.search {
+  position: relative;
+  &__input{
+    position: absolute;
+    z-index: 100;
+    top: 58px;
+    left: -260px;
+  }
+}
+

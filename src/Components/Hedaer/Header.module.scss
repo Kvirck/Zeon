@@ -89,35 +89,48 @@ ul {}
 
     .search {
       display: flex;
-      width: 662px;
+      position: relative;
+      width: 632px;
 
-      input {
-        background-image: url(../../../public/img/searchIcon.svg);
-        background-repeat: no-repeat;
-        background-position: right 3% bottom 50%;
-        outline: none;
-        position: relative;
-        margin: 0 25px;
-        width: 100%;
-        height: 44px;
-        padding-left: 20px;
-        border: 1px solid #e0e0e0;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
+      &__input {
+        position: absolute;
+        top: -23px;
+        left: 0px;
+        z-index: 50;
         display: flex;
         align-items: center;
-        color: #858f9b;
+        background: #F8F8F8;
+        border: 1px solid #e0e0e0;
+        width: 632px;
+        height: 44px;
+
+        input {
+          background-repeat: no-repeat;
+          background-position: right 3% bottom 50%;
+          outline: none;
+          position: relative;
+          width: 100%;
+          padding-left: 20px;
+          border: none;
+          background: #F8F8F8;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 20px;
+          display: flex;
+          align-items: center;
+          color: #858f9b;
+        }
+
+        svg {
+          padding-right: 13px;
+          cursor: pointer;
+
+        }
       }
 
     }
 
-    @media (max-width:1168) {
-      input {
-        max-width: 50px;
-      }
-    }
   }
 
   .bottom {
@@ -133,6 +146,7 @@ ul {}
     }
 
     &__favorites {
+      margin-left: 90px;
       &__icon {
         position: relative;
       }
@@ -147,6 +161,7 @@ ul {}
         width: 10px;
         height: 10px;
       }
+
       span {
         font-style: normal;
         font-weight: 500;
@@ -161,7 +176,8 @@ ul {}
       align-items: center;
       margin-left: 20px;
       position: relative;
-      &__active{
+
+      &__active {
         position: absolute;
         background: #E5271B;
         left: 15px;
@@ -169,7 +185,8 @@ ul {}
         border-radius: 50%;
         width: 10px;
         height: 10px;
-        }
+      }
+
       span {
         font-style: normal;
         font-weight: 500;
@@ -183,6 +200,7 @@ ul {}
       }
     }
 
-  
+
   }
 }
+
