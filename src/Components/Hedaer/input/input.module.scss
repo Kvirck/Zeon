@@ -21,6 +21,8 @@
 
         @media screen and (max-width: 320px) {
             width: 292px;
+            left: -7px;
+
         }
 
         input {
@@ -68,8 +70,8 @@
     padding-right: 1%;
 
     @media screen and (max-width: 320px) {
-        left: 12px;
-        width: 126%;
+        left: 6px;
+        width: 125%;
     }
 
     &__searchs {

@@ -1,5 +1,5 @@
 import style from "./CollectionsPage.module.scss"
-import ScrollTop from './../../Components/SecondaryFunc/ScrollTop/ScrollTop';
+import ScrollTop from './../../Components/SecondaryFunc/ScrollTopV2/ScrollTop';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import collectionsPage from "../../DataBase/collectionsPage";
@@ -9,6 +9,7 @@ import { useState } from 'react';
 import RoutingsNum from "../../Components/SecondaryFunc/RoutingsNumV2/RoutingsNum";
 import SimilarProduct from "../../Components/SecondaryFunc/SimilarProduct/SimilarProduct";
 import BreadCrumbs from "../../Components/BreadCrumbs/BreadCrumbs";
+import ClockLoader from "react-spinners/ClipLoader";
 
 const CollectionsPage = () => {
     const { id } = useParams()
@@ -23,6 +24,13 @@ const CollectionsPage = () => {
         load()
 
     }, [id])
+    const [loading, setIsLoading] = useState(false)
+    useEffect(() => {
+        setIsLoading(true)
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 1000)
+    }, [])
     return (
         <>
             <BreadCrumbs pathname={[
@@ -30,7 +38,13 @@ const CollectionsPage = () => {
                 { id: 2, page: 'Коллекции', path: '/Collections' },
                 { id: 3, page: `${collectionsPage.toJS_getCollPage_products.name}` }
             ]} />
-            < div className="container" >
+           {loading ?
+                <div className="loader-content">
+                    <div className="loader-All">
+                        <ClockLoader color={"#36D7B7"} loading={loading} size={150} />
+                    </div>
+                </div>
+                : < div className="container" >
                 <div className={style.collectionsPage}>
                     <p className={style.collectionsPage__title}>Коллекции {collectionsPage.toJS_getCollPage_products.name}</p>
                     <div className={style.collectionsPage__items}>
@@ -54,7 +68,7 @@ const CollectionsPage = () => {
                     <SimilarProduct />
                 </div>
                 <ScrollTop />
-            </div >
+            </div >}
         </>
 
     )

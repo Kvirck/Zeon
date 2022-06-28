@@ -7,6 +7,7 @@ import { Context } from './../../../../index';
 import { toJS } from 'mobx';
 import Flags from './../../Flags/Flags';
 import ModalCallReceived from './../../../../Pages/Basket/Modal/ModalCallReceived';
+import MoveUp from "../../ScrollTop/MoveUp";
 
 const ModalProduct = ({ active, setActive }) => {
     const [lastModal, setLastModal]= useState(false)
@@ -107,7 +108,7 @@ const ModalProduct = ({ active, setActive }) => {
                                     <div className={formik.touched.publicOffer && formik.errors.publicOffer ?
                                         `${style.modalProduct__content__checkbox} ${style.modalProduct__content__checkActive}` : style.modalProduct__content__checkbox}>
                                         <input type="checkbox" id="publicOffer" onClick={() => setPublicOffer(true)} {...formik.getFieldProps('publicOffer')} />
-                                        <label htmlFor="publicOffer">Согласен с условиями <Link to={'/PublicOffer'}><span>публичной оферты</span></Link> </label>
+                                        <label htmlFor="publicOffer">Согласен с условиями <Link target="_blank"  onClick={()=>MoveUp()} to={'/PublicOffer'}><span>публичной оферты</span></Link> </label>
                                     </div>
                                     <button className={formik.isValid && publicOffer ? `${style.modalProduct__content__btn} ${style.modalProduct__content__btnActive}`
                                         : style.modalProduct__content__btn} type="button" onClick={formik.handleSubmit} >Заказать</button>

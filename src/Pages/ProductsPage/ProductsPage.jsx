@@ -11,6 +11,7 @@ import { Context } from './../../index';
 import BreadCrumbs from "../../Components/BreadCrumbs/BreadCrumbs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
+import ClockLoader from "react-spinners/ClipLoader";
 
 const ProductsPage = () => {
     const { id } = useParams()
@@ -41,6 +42,13 @@ const ProductsPage = () => {
     }, [id])
 
     const [love, setLove] = useState(false)
+    const [loading, setLoading] = useState(false)
+    useEffect(() => {
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 1000)
+    }, [])
     return (
         <>
             {post ? <BreadCrumbs pathname={[
@@ -49,7 +57,14 @@ const ProductsPage = () => {
                 { id: 3, page: `${post.category.name}`, path: `/Collections/${post.category.id}` },
                 { id: 4, page: `${post.name}` }
             ]} /> : null}
-            <div className="container">
+            {loading ?
+                <div className="loader-content">
+                    <div className="loader-All">
+                        <ClockLoader color={"#36D7B7"} loading={loading} size={150} />
+                    </div>
+                </div>
+                :
+                <div className="container">
                 {color ? (
                     <div className={style.productsPage}>
                         <div className={style.productsPage__img__mini}>
@@ -170,6 +185,7 @@ const ProductsPage = () => {
                     <SimilarProduct />
                 </div>
             </div >
+            }
         </>
     )
 }

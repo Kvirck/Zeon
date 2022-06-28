@@ -1,21 +1,7 @@
-import "./loader.css"
+import style from "./loader.module.scss"
+import ClockLoader from "react-spinners/ClipLoader";
 
-const Loader = () => {
-    return (
-        <div className='container'>
-            <div className='loaders'>
-                <div id="load">
-                    <div>G</div>
-                    <div>N</div>
-                    <div>I</div>
-                    <div>D</div>
-                    <div>A</div>
-                    <div>O</div>
-                    <div>L</div>
-                </div>
-            </div>
-
-        </div>
-    )
+const Loader = ({ loading }) => {
+        <ClockLoader color={"#36D7B7"} loading={loading} size={150} />
 }
 export default Loader

@@ -11,6 +11,7 @@ class dataLinks {
     links = []
     publicOffer = []
     news = {}
+    aboutAs = {}
     async getDataLinks() {
         await axios.get(`http://localhost:3001/data`)
             .then(res => {
@@ -18,6 +19,9 @@ class dataLinks {
                 this.links = res.data.links
                 this.publicOffer = res.data.publicOffer
                 this.news = res.data.news
+                this.aboutAs = res.data.aboutAs
+
+                
             })
     }
     get toJS_news() {
@@ -31,6 +35,9 @@ class dataLinks {
     }
     get toJS_publicOffer() {
         return toJS(this.publicOffer)
+    }
+    get toJS_aboutAs() {
+        return toJS(this.aboutAs)
     }
 
 

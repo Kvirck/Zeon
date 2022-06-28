@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import style from "./ScrollTop.module.scss"
 import "./CSSTransition.css"
 import ModalCall from './../ModalWindow/ModalCall/ModalCall';
@@ -10,19 +10,8 @@ const ScrollTop = () => {
         }))
     }
     const [show, setShow] = useState(false)
-    const [white, setWhite] = useState(false)
     const [modalactive, setModalActive] = useState(false)
-    useEffect(() => {
-        document.addEventListener('scroll', whiteIcon)
-        return function () {
-            document.removeEventListener('scroll', whiteIcon)
-        }
-    }, [white])
-    const whiteIcon = e => {
-        if (e.target.document.scrollHeight < 100) {
-            return setWhite(true)
-        }
-    }
+   
     return (
         <div>
             <div className={style.scrollTop}>
